@@ -1,0 +1,60 @@
+# BZYNC_CLOUD — platform configuration for this project.
+#
+# The platform reads this file to know how to build and deploy your app.
+# Dockerfile and docker-compose files are generated automatically — you do
+# not need to create or edit them.
+#
+# ── Fields ────────────────────────────────────────────────────────────────────
+#
+# path      Subdirectory containing your app code, relative to the repo root.
+#           Use "." (the default) when your app is at the root.
+#
+# runtime   Language runtime: php | node | python | ruby | go | static
+#
+# framework Framework hint used to pick the right build template.
+#           php:    wordpress | laravel | lumen | symfony | drupal | joomla |
+#                   magento | october-cms | codeigniter | plain
+#           node:   nextjs | remix | astro | nuxt | sveltekit | gatsby |
+#                   strapi | vite-react | vite-vue | vite-svelte | express |
+#                   fastify | nestjs | plain
+#           python: django | flask | fastapi | plain
+#           ruby:   rails | sinatra | plain
+#
+# version   Runtime version (e.g. "8.4" for PHP 8.4, "22" for Node 22).
+#
+# ── Multi-service apps ────────────────────────────────────────────────────────
+#
+# Define each service in its own [section]. All fields apply per-section.
+# Example:
+#
+#   [web]
+#   path = frontend
+#   runtime = node
+#   framework = nextjs
+#   version = 22
+#
+#   [api]
+#   path = backend
+#   runtime = go
+#   version = 1.24
+#
+# ── Database ──────────────────────────────────────────────────────────────────
+#
+# Link a database to this environment in the Bzync Cloud dashboard.
+# The platform injects connection variables automatically:
+#   MySQL:    MYSQL_HOST, MYSQL_PORT, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD
+#   Postgres: POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD
+#   Generic:  DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD, DATABASE_URL
+#
+# ── Environment variables ─────────────────────────────────────────────────────
+#
+# Set environment variables in the Bzync Cloud dashboard under each
+# environment. Use .env.example (and .env.production.example,
+# .env.staging.example, .env.development.example) as reference — the
+# platform seeds these as defaults on first deploy.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+path = .
+runtime = node
+framework = eleventy

@@ -1,0 +1,20 @@
+{
+  "name": "vite-qwik-ts-app",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "vite": "^5.0.0",
+    "@builder.io/qwik": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

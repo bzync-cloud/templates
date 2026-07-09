@@ -1,0 +1,14 @@
+{
+  "name": "openclaw-starter",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "openclaw start",
+    "dev": "openclaw start"
+  },
+  "dependencies": {
+    "openclaw": "latest"
+  }
+}

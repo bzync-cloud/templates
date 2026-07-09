@@ -1,0 +1,9 @@
+index:
+    path: /
+    controller: App\Controller\ApiController::index
+    methods: GET
+
+health:
+    path: /health
+    controller: App\Controller\ApiController::health
+    methods: GET

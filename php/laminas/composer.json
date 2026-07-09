@@ -1,0 +1,10 @@
+{
+  "name": "acmecorp/app",
+  "require": {
+    "php": "^8.4",
+    "laminas/laminas-mvc": "^3.0",
+    "laminas/laminas-db": "^2.0",
+    "laminas/laminas-diactoros": "^3.0",
+    "laminas/laminas-httphandlerrunner": "^2.0"
+  }
+}

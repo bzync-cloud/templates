@@ -1,0 +1,12 @@
+node_modules
+dist
+.astro
+npm-debug.log
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+!.env.development.example
+BZYNC_CLOUD

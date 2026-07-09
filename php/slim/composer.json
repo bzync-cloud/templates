@@ -1,0 +1,9 @@
+{
+  "name": "acmecorp/api",
+  "require": {
+    "php": "^8.4",
+    "slim/slim": "^4.0",
+    "slim/psr7": "^1.6",
+    "php-di/php-di": "^7.0"
+  }
+}

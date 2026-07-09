@@ -1,0 +1,5 @@
+vendor
+.git
+.env
+.env.*
+BZYNC_CLOUD

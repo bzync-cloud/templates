@@ -1,0 +1,21 @@
+{
+  "name": "sveltekit-starter",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node build",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@sveltejs/adapter-node": "^5.2.9",
+    "@sveltejs/kit": "^2.7.5",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "svelte": "^5.0.0",
+    "vite": "^5.4.10"
+  },
+  "devDependencies": {}
+}

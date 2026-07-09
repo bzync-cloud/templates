@@ -1,0 +1,17 @@
+{
+  "name": "astro-starter",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node ./dist/server/entry.mjs",
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.0.0",
+    "astro": "^5.0.0"
+  }
+}

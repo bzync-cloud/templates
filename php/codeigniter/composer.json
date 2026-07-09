@@ -1,0 +1,7 @@
+{
+  "name": "acmecorp/app",
+  "require": {
+    "php": "^8.4",
+    "codeigniter4/framework": "^4.5"
+  }
+}

@@ -1,0 +1,1 @@
+{"name":"node-worker-starter","version":"1.0.0","type":"module","engines":{"node":">=22"},"scripts":{"start":"node worker.js","dev":"node --watch worker.js"}}

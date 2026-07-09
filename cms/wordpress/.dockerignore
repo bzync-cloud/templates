@@ -1,0 +1,8 @@
+.git
+.gitignore
+*.md
+.env
+.env.*
+BZYNC_CLOUD
+wp-content/cache/
+wp-content/uploads/

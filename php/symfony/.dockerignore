@@ -1,0 +1,12 @@
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+!.env.development.example
+vendor/
+node_modules/
+var/cache/
+var/log/
+BZYNC_CLOUD

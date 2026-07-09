@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+.web
+.venv
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+!.env.development.example
+BZYNC_CLOUD

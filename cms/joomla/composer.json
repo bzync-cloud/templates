@@ -1,0 +1,8 @@
+{
+  "name": "acmecorp/site",
+  "description": "Joomla sample application for Bzync Cloud.",
+  "license": "proprietary",
+  "require": {
+    "php": "^8.3"
+  }
+}

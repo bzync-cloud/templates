@@ -1,0 +1,1 @@
+{"name":"bun-worker-starter","version":"1.0.0","type":"module","scripts":{"start":"bun worker.ts","dev":"bun --watch worker.ts"},"devDependencies":{"@types/bun":"latest"}}

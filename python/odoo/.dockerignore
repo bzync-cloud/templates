@@ -1,0 +1,14 @@
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+!.env.development.example
+!.env.production.example
+!.env.staging.example
+__pycache__/
+*.pyc
+odoo_data/
+postgres_data/
+BZYNC_CLOUD

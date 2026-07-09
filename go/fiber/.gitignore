@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Go
+*.exe
+*.test
+*.out
+bin/
+vendor/
+go.work
+go.work.sum

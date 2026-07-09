@@ -1,0 +1,14 @@
+{
+  "name": "directus-project",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "directus bootstrap && directus start",
+    "dev": "directus bootstrap && directus start"
+  },
+  "dependencies": {
+    "directus": "^11.5.1"
+  }
+}

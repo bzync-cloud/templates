@@ -1,0 +1,9 @@
+{
+  "name": "acmecorp/api",
+  "require": {
+    "php": "^8.4",
+    "mezzio/mezzio": "^3.0",
+    "mezzio/mezzio-fastroute": "^3.0",
+    "laminas/laminas-diactoros": "^3.0"
+  }
+}

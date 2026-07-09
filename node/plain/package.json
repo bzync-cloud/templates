@@ -1,0 +1,13 @@
+{
+  "name": "worker-script",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "payments-service",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "fastify": "^4.0.0",
+    "@fastify/cors": "^9.0.0",
+    "@fastify/jwt": "^8.0.0"
+  }
+}

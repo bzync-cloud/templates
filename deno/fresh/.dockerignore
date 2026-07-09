@@ -1,0 +1,9 @@
+_fresh
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+!.env.development.example
+BZYNC_CLOUD

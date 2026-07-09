@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-env main.ts",
+    "dev": "deno run --watch --allow-net --allow-env main.ts"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "preact": "https://esm.sh/preact@10.24.3",
+    "preact/": "https://esm.sh/preact@10.24.3/"
+  }
+}

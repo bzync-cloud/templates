@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+!.env.development.example
+vendor/
+web/sites/default/files/
+BZYNC_CLOUD

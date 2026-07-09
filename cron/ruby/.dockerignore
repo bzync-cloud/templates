@@ -1,0 +1,9 @@
+.git
+.gitignore
+*.md
+.env
+.env.*
+.bundle
+log/
+tmp/
+BZYNC_CLOUD

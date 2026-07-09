@@ -1,0 +1,1 @@
+{"name":"bzync/laravel-api-starter","type":"project","require":{"php":"^8.4","laravel/framework":"^11.0"},"scripts":{"start":"php -S 0.0.0.0:8000 -t public"}}

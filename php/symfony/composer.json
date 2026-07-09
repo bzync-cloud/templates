@@ -1,0 +1,15 @@
+{
+  "name": "acmecorp/platform",
+  "require": {
+    "php": "^8.4",
+    "symfony/framework-bundle": "^7.0",
+    "symfony/runtime": "^7.0",
+    "symfony/dotenv": "^7.0",
+    "doctrine/orm": "^3.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    }
+  }
+}

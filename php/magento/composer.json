@@ -1,0 +1,8 @@
+{
+  "name": "acmecorp/store",
+  "description": "Magento sample application for Bzync Cloud.",
+  "license": "proprietary",
+  "require": {
+    "php": "^8.4"
+  }
+}

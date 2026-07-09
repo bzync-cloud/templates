@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.example
+!.env.development.example
+node_modules/
+.next/
+BZYNC_CLOUD

@@ -1,0 +1,7 @@
+{
+  "name": "acmecorp/api",
+  "require": {
+    "php": "^8.4",
+    "flightphp/core": "^3.0"
+  }
+}

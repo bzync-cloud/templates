@@ -1,0 +1,17 @@
+{
+  "name": "keystone-starter",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "keystone start",
+    "dev": "keystone dev --host 0.0.0.0",
+    "build": "keystone build"
+  },
+  "dependencies": {
+    "@keystone-6/core": "^6.0.0",
+    "typescript": "^5.6.3"
+  }
+}

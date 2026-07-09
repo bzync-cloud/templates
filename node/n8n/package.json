@@ -1,0 +1,14 @@
+{
+  "name": "n8n-starter",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "sh start.sh",
+    "dev": "sh start.sh"
+  },
+  "dependencies": {
+    "n8n": "^1.95.0"
+  }
+}

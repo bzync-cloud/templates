@@ -1,0 +1,22 @@
+{
+  "name": "hono-starter",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}

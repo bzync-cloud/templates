@@ -1,0 +1,1 @@
+{"name":"eleventy-starter","version":"1.0.0","type":"module","scripts":{"start":"npx http-server _site -p 8080 -a 0.0.0.0","dev":"eleventy --serve --port=8080","build":"eleventy"},"dependencies":{"@11ty/eleventy":"^3.0.0","http-server":"^14.1.1"}}

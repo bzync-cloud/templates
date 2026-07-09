@@ -1,0 +1,8 @@
+{
+  "name": "acmecorp/microservice",
+  "require": {
+    "php": "^8.4",
+    "laravel/lumen-framework": "^10.0",
+    "vlucas/phpdotenv": "^5.4"
+  }
+}
