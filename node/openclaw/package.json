@@ -5,10 +5,10 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "openclaw start",
-    "dev": "openclaw start"
+    "start": "openclaw gateway --port 18789",
+    "dev": "openclaw gateway --port 18789 --verbose"
   },
   "dependencies": {
-    "openclaw": "latest"
+    "openclaw": "^2026.6.11"
   }
 }

@@ -34,9 +34,7 @@ db_container_name() {
 
 env_args() {
   dir=$1
-  if [ -f "$dir/.env.development.example" ]; then
-    printf -- '--env-file %s/.env.development.example ' "$dir"
-  elif [ -f "$dir/.env.example" ]; then
+  if [ -f "$dir/.env.example" ]; then
     printf -- '--env-file %s/.env.example ' "$dir"
   fi
 }
@@ -201,8 +199,8 @@ if [ -n "$ONLY" ]; then
 else
   for dir in $(find "$ROOT" -mindepth 1 -maxdepth 2 -type d | sort); do
     case ${dir#"$ROOT"/} in
-      .git|scripts|go|full-stack|node|php|python|ruby|db) continue ;;
-      .git/*|scripts/*|db/*) continue ;;
+      .git|scripts|go|full-stack|node|php|python|ruby|database) continue ;;
+      .git/*|scripts/*|database/*) continue ;;
     esac
     if [ -f "$dir/Dockerfile" ] || [ -f "$dir/index.html" ]; then
       if ! run_template "$dir"; then

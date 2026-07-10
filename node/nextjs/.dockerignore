@@ -6,7 +6,6 @@ npm-debug.log
 .env
 .env.*
 !.env.example
-!.env.development.example
 .next/
 out/
 BZYNC_CLOUD

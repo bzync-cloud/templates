@@ -16,7 +16,7 @@ Bzync Cloud reads your project files (`package.json`, `go.mod`, `composer.json`,
 
 ### Node.js
 
-`node/express` · `node/fastify` · `node/koa` · `node/hono` · `node/nextjs` · `node/nuxt` · `node/sveltekit` · `node/remix` · `node/gatsby` · `node/nestjs` · `node/adonisjs` · `node/strapi` · `node/keystone` · `node/directus` · `node/medusajs` · `node/bullmq-worker` · `node/plain`
+`node/express` · `node/fastify` · `node/koa` · `node/hono` · `node/nextjs` · `node/nuxt` · `node/sveltekit` · `node/remix` · `node/gatsby` · `node/nestjs` · `node/adonisjs` · `node/strapi` · `node/keystone` · `node/directus` · `node/medusajs` · `node/bullmq-worker` · `node/n8n` · `node/openclaw` · `node/plain`
 
 ### Vite
 
@@ -70,15 +70,15 @@ Bzync Cloud reads your project files (`package.json`, `go.mod`, `composer.json`,
 
 `full-stack/nextjs-go` · `full-stack/nextjs-fastapi` · `full-stack/nextjs-laravel` · `full-stack/django-react` · `full-stack/fastapi-react` · `full-stack/sveltekit-fastapi` · `full-stack/vite-react-fastapi` · `full-stack/vite-react-laravel` · `full-stack/rails-react` · `full-stack/astro-strapi` · `full-stack/laravel-inertia-react` · `full-stack/laravel-inertia-vue` · `full-stack/laravel-inertia-svelte`
 
-### Databases (local dev reference)
+### Databases
 
-`db/postgres` · `db/mysql` · `db/mariadb` · `db/mongodb` · `db/redis` · `db/couchbase`
+`database/postgres` · `database/mysql` · `database/mariadb` · `database/mongodb` · `database/redis` · `database/couchbase`
 
-Unlike the templates above, these aren't deployable apps — they're `Dockerfile`s matching the
-exact engine/version Bzync Cloud Managed Databases (MDB) provisions in production, so you can run
-a matching database locally before linking the real managed instance from the dashboard. See each
-directory's `README.md` for supported versions, injected connection variables, and connection
-snippets.
+Deployable like any other template — clone, push, and the platform builds the `Dockerfile` as-is.
+Each one matches the exact engine/version Bzync Cloud Managed Databases (MDB) provisions in
+production, so it also doubles as a local dev container you can run before linking the real
+managed instance from the dashboard. See each directory's `README.md` for supported versions,
+injected connection variables, and connection snippets.
 
 ---
 
@@ -89,9 +89,6 @@ snippets.
 | Source code | Minimal working app with `/` and `/health` endpoints |
 | `BZYNC_CLOUD` | Tells the platform your runtime, framework, and version |
 | `.env.example` | All environment variables, documented |
-| `.env.production.example` | Production-specific overrides |
-| `.env.staging.example` | Staging-specific overrides |
-| `.env.development.example` | Development-specific overrides |
 | `.gitignore` | Sensible ignores for the stack |
 | `.dockerignore` | Keeps images lean |
 

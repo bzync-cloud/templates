@@ -1,12 +1,22 @@
-# MongoDB — Local Dev Reference
+# MongoDB
 
-A local MongoDB container matching what Bzync Cloud Managed Databases (MDB) provisions in
-production, so you can develop against the same engine version before linking the real thing.
-Production instances run as a single-node replica set (`--replSet`); this Dockerfile omits
-that since it isn't needed for local development against a single node.
+A deployable MongoDB template — clone, push, and Bzync Cloud builds this `Dockerfile` as-is,
+same as any other template. It also matches the exact engine/version Bzync Cloud Managed
+Databases (MDB) provisions in production, so it doubles as a local dev container. MDB instances
+run as a single-node replica set (`--replSet`); this Dockerfile omits that since it isn't needed
+outside of MDB's replication tooling.
 
 **Supported versions:** `7.0` (default), `6.0`
 **Default port:** `27017`
+
+## Deploying
+
+Push this directory to a repo and connect it in the Bzync Cloud dashboard like any other
+template — it builds and runs as a single-container service. Set `MONGO_INITDB_DATABASE`,
+`MONGO_INITDB_ROOT_USERNAME`, and `MONGO_INITDB_ROOT_PASSWORD` in the dashboard for the
+environment (see `.env.example`). A deployed instance here is a plain container, not a managed
+one — no automatic replication, backups, or HA. For production data, provision through
+**Databases → Create → MongoDB** (MDB) instead and link it to your app's environment.
 
 ## Run locally
 
@@ -21,11 +31,10 @@ Connect with `mongosh`:
 mongosh "mongodb://app:changeme@localhost:27017/app?authSource=admin"
 ```
 
-## Using a real managed database
+## Using MDB instead
 
-This directory is a local dev stand-in — it isn't deployed by Bzync Cloud. Provision the real
-thing from the dashboard: **Databases → Create → MongoDB**, then link it to your app's
-environment. The platform injects these variables automatically:
+If you provision a real managed MongoDB from **Databases → Create → MongoDB** and link it to
+your app's environment, the platform injects these variables automatically:
 
 ```
 DB_HOST

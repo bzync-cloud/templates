@@ -4,9 +4,6 @@
 .env
 .env.*
 !.env.example
-!.env.development.example
-!.env.production.example
-!.env.staging.example
 __pycache__/
 *.pyc
 odoo_data/

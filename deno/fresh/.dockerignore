@@ -5,5 +5,4 @@ _fresh
 .env
 .env.*
 !.env.example
-!.env.development.example
 BZYNC_CLOUD

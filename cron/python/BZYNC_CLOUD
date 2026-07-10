@@ -49,9 +49,8 @@
 # ── Environment variables ─────────────────────────────────────────────────────
 #
 # Set environment variables in the Bzync Cloud dashboard under each
-# environment. Use .env.example (and .env.production.example,
-# .env.staging.example, .env.development.example) as reference — the
-# platform seeds these as defaults on first deploy.
+# environment. Use .env.example as reference — the platform seeds
+# these as defaults on first deploy.
 #
 # ─────────────────────────────────────────────────────────────────────────────
 

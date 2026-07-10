@@ -49,16 +49,17 @@
 # ── Environment variables ─────────────────────────────────────────────────────
 #
 # Set environment variables in the Bzync Cloud dashboard under each
-# environment. Use .env.example (and .env.production.example,
-# .env.staging.example, .env.development.example) as reference — the
-# platform seeds these as defaults on first deploy.
+# environment. Use .env.example as reference — the platform seeds
+# these as defaults on first deploy.
 #
 # ── This template ─────────────────────────────────────────────────────────────
 #
-# This is a local dev reference for MySQL, not a deployable app — it ships
-# its own Dockerfile, so runtime/framework/version below are ignored (a
-# supplied Dockerfile is always used as-is). Provision the real managed
-# database from the dashboard instead: Databases → Create → MySQL.
+# This template deploys like any other — it ships its own Dockerfile, so
+# runtime/framework/version below are ignored (a supplied Dockerfile is
+# always used as-is). It also matches Bzync Cloud Managed Databases (MDB)'s
+# production MySQL, so it doubles as a local dev container. For managed
+# backups/replication/HA, provision through the dashboard instead:
+# Databases → Create → MySQL.
 #
 # ─────────────────────────────────────────────────────────────────────────────
 

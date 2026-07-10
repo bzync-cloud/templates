@@ -1,10 +1,20 @@
-# Postgres — Local Dev Reference
+# Postgres
 
-A local Postgres container matching what Bzync Cloud Managed Databases (MDB) provisions in
-production, so you can develop against the same engine version before linking the real thing.
+A deployable Postgres template — clone, push, and Bzync Cloud builds this `Dockerfile` as-is,
+same as any other template. It also matches the exact engine/version Bzync Cloud Managed
+Databases (MDB) provisions in production, so it doubles as a local dev container.
 
 **Supported versions:** `16` (default), `15`, `14`
 **Default port:** `5432`
+
+## Deploying
+
+Push this directory to a repo and connect it in the Bzync Cloud dashboard like any other
+template — it builds and runs as a single-container service. Set `POSTGRES_DB`,
+`POSTGRES_USER`, and `POSTGRES_PASSWORD` in the dashboard for the environment (see
+`.env.example`). A deployed instance here is a plain container, not a managed one — no
+automatic replication, backups, or HA. For production data, provision through
+**Databases → Create → Postgres** (MDB) instead and link it to your app's environment.
 
 ## Run locally
 
@@ -19,11 +29,10 @@ Connect with `psql`:
 psql "postgres://app:changeme@localhost:5432/app"
 ```
 
-## Using a real managed database
+## Using MDB instead
 
-This directory is a local dev stand-in — it isn't deployed by Bzync Cloud. Provision the real
-thing from the dashboard: **Databases → Create → Postgres**, then link it to your app's
-environment. The platform injects these variables automatically:
+If you provision a real managed Postgres from **Databases → Create → Postgres** and link it to
+your app's environment, the platform injects these variables automatically:
 
 ```
 POSTGRES_HOST

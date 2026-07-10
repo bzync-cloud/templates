@@ -4,7 +4,6 @@
 .env
 .env.*
 !.env.example
-!.env.development.example
 node_modules/
 dist/
 BZYNC_CLOUD

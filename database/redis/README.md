@@ -1,10 +1,21 @@
-# Redis — Local Dev Reference
+# Redis
 
-A local Redis container matching what Bzync Cloud Managed Databases (MDB) provisions in
-production, so you can develop against the same engine version before linking the real thing.
+A deployable Redis template — clone, push, and Bzync Cloud builds this `Dockerfile` as-is, same
+as any other template. It also matches the exact engine/version Bzync Cloud Managed Databases
+(MDB) provisions in production, so it doubles as a local dev container.
 
 **Supported versions:** `7` (default, `7.2-alpine`), `6` (`6.2-alpine`)
 **Default port:** `6379`
+
+## Deploying
+
+Push this directory to a repo and connect it in the Bzync Cloud dashboard like any other
+template — it builds and runs as a single-container service. Set `REDIS_PASSWORD` in the
+dashboard for the environment (see `.env.example`). A deployed instance here is a plain
+container, not a managed one — no automatic replication, backups, or HA, and its `appendonly`
+persistence lives on the container's ephemeral disk unless you attach a volume. For production
+data, provision through **Databases → Create → Redis** (MDB) instead and link it to your app's
+environment.
 
 ## Run locally
 
@@ -19,11 +30,10 @@ Connect with `redis-cli`:
 redis-cli -a changeme --no-auth-warning -h 127.0.0.1 -p 6379 ping
 ```
 
-## Using a real managed database
+## Using MDB instead
 
-This directory is a local dev stand-in — it isn't deployed by Bzync Cloud. Provision the real
-thing from the dashboard: **Databases → Create → Redis**, then link it to your app's
-environment. The platform injects these variables automatically:
+If you provision a real managed Redis from **Databases → Create → Redis** and link it to your
+app's environment, the platform injects these variables automatically:
 
 ```
 DB_HOST
