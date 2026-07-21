@@ -52,9 +52,18 @@
 # environment. Use .env.example as reference — the platform seeds
 # these as defaults on first deploy.
 #
+# ── This template ─────────────────────────────────────────────────────────────
+#
+# This template deploys like any other — it ships its own Dockerfile, so
+# runtime/framework/version below are ignored (a supplied Dockerfile is
+# always used as-is). Unlike the database/* templates, there is no managed
+# Bzync equivalent to link instead — this deployment IS your Gitea instance.
+# Set GITEA__server__ROOT_URL and GITEA__server__DOMAIN to your real domain
+# once one is attached, and read README.md before disabling
+# GITEA__service__DISABLE_REGISTRATION if you want open sign-up.
+#
 # ─────────────────────────────────────────────────────────────────────────────
 
 path = .
-runtime = node
-framework = openclaw
-version = 22
+dockerfile = Dockerfile
+volume = /data

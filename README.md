@@ -75,10 +75,56 @@ Bzync Cloud reads your project files (`package.json`, `go.mod`, `composer.json`,
 `database/postgres` · `database/mysql` · `database/mariadb` · `database/mongodb` · `database/redis` · `database/couchbase`
 
 Deployable like any other template — clone, push, and the platform builds the `Dockerfile` as-is.
-Each one matches the exact engine/version Bzync Cloud Managed Databases (MDB) provisions in
-production, so it also doubles as a local dev container you can run before linking the real
-managed instance from the dashboard. See each directory's `README.md` for supported versions,
-injected connection variables, and connection snippets.
+Each one matches the exact engine/version Bzync Cloud's production Managed Databases (MDB)
+provisions — but this tier has no managed database service of its own (mdb was removed here; see
+the workspace root `README.md`), so a deployed instance here is the database, not a dev stand-in
+for a linked managed one. See each directory's `README.md` for supported versions, the connection
+variables to set on any other app that needs to reach it, and connection snippets.
+
+### Version Control
+
+`self-hosted/version-control/gitea` · `self-hosted/version-control/forgejo` · `self-hosted/version-control/gitlab-ce` · `self-hosted/version-control/cogs` (Gogs)
+
+Self-hosted Git servers — deployable like any other template, each ships its own `Dockerfile`.
+Like `database/*` on this tier, there's no managed Bzync equivalent to fall back on: these
+deployments *are* the Git server, and their persistent volume holds real, non-reproducible data
+(repos, issues, users). Each image is rebuilt from the upstream vendor image with the SSH port
+deliberately dropped — Bzync Cloud's ingress and health checks target the lowest-numbered
+`EXPOSE`d port in the image, and these upstream images all bake in port `22` alongside their HTTP
+port, which would otherwise silently steal ingress traffic. Git-over-SSH still runs inside each
+container, just not reachable through the platform's HTTP(S)-only ingress — use HTTPS remotes
+instead. See each directory's `README.md` for first-boot admin account setup, resource
+requirements (GitLab CE in particular needs considerably more than the other three), and
+switching from the zero-config SQLite default to a separately deployed `database/postgres`
+instance.
+
+### Database Admin
+
+`self-hosted/db-admin/adminer` · `self-hosted/db-admin/phpmyadmin` ·
+`self-hosted/db-admin/mongo-express` · `self-hosted/db-admin/pgadmin`
+
+GUIs for a database deployed elsewhere on this tier (e.g. from `database/*`) — Adminer and
+phpMyAdmin are stateless pass-throughs (no login of their own, no volume; whatever DB credentials
+you type in each visit are the whole auth story). mongo-express and pgAdmin do have their own
+separate login on top of the target database's credentials, and use `DB_*` env vars you set
+yourself to point at that deployment (no automatic linking on this tier) — see each directory's
+`README.md` for exactly which vars, and how each one's access should be restricted before it's
+reachable on a public domain.
+
+### Project Management
+
+`self-hosted/project-management/vikunja` · `self-hosted/project-management/focalboard` ·
+`self-hosted/project-management/leantime` · `self-hosted/project-management/plane`
+
+Self-hosted task/project trackers — deployable like any other template. Vikunja and Focalboard
+default to an embedded SQLite database (no separate database needed for solo/small use, with a
+documented path to a separately deployed Postgres/MySQL instance — from `database/*` on this
+tier — for heavier use); Leantime has no SQLite fallback and needs a MySQL/MariaDB database from
+the start. Plane's all-in-one image is the heaviest of the four: it needs Postgres, Redis, an
+AMQP broker, and S3-compatible object storage all running before it starts at all —
+`database/*` covers the first two on this tier, but the broker and object storage have no Bzync
+template equivalent and need to come from elsewhere. See each directory's `README.md` for the
+exact tradeoffs and setup steps.
 
 ---
 
@@ -122,7 +168,9 @@ framework = nextjs
 version = 22
 ```
 
-The `version` field is optional — the platform picks a sensible default if omitted. If you supply your own `Dockerfile`, it is used as-is and `BZYNC_CLOUD` is ignored for that service.
+The `version` field is optional — the platform picks a sensible default if omitted. If you supply your own `Dockerfile`, add `dockerfile = Dockerfile` (or the correct relative path) to `BZYNC_CLOUD` — a Dockerfile sitting in the repo is **not** picked up automatically just by being present; without that key the platform falls back to auto-detecting a runtime from `package.json`/`go.mod`/etc., which either fails outright (no such file) or silently builds a *different*, auto-generated Dockerfile instead of the one you shipped. Every template in this catalog that ships its own Dockerfile sets this key.
+
+Only the **first** `[section]` in a multi-service `BZYNC_CLOUD` is currently built — the platform parses every section but only acts on the first one, so a two-service full-stack template deploys as a single service today, not two.
 
 ---
 

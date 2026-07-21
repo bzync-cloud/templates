@@ -56,11 +56,16 @@
 #
 # This template deploys like any other — it ships its own Dockerfile, so
 # runtime/framework/version below are ignored (a supplied Dockerfile is
-# always used as-is). It also matches Bzync Cloud Managed Databases (MDB)'s
-# production Postgres, so it doubles as a local dev container. For managed
-# backups/replication/HA, provision through the dashboard instead:
-# Databases → Create → Postgres.
+# always used as-is). It matches the engine/version Bzync Cloud's
+# production Managed Databases (MDB) uses, so it doubles as a local dev
+# container — but this tier has no managed database service of its own
+# (mdb was removed here; see the workspace root README.md). Deployed here,
+# this container *is* the database: no automatic backups, replication, or
+# HA, and no dashboard linking — copy its connection values into any other
+# app that needs them.
 #
 # ─────────────────────────────────────────────────────────────────────────────
 
 path = .
+dockerfile = Dockerfile
+volume = /var/lib/postgresql/data

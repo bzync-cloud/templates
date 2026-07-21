@@ -1,11 +1,13 @@
 # Couchbase
 
 A deployable Couchbase template — clone, push, and Bzync Cloud builds this `Dockerfile` as-is,
-same as any other template. It also matches the exact engine/version Bzync Cloud Managed
-Databases (MDB) provisions in production, so it doubles as a local dev container.
-`entrypoint.sh` mirrors the cluster-init / bucket-create / user-manage sequence that
-`platform-cloud-mdb`'s provisioner runs against production instances, so the container comes up
-with a usable cluster and bucket instead of the base image's unconfigured first-boot state.
+same as any other template. It matches the exact engine/version Bzync Cloud's production Managed
+Databases (MDB) provisions — but this tier has no managed database service of its own (mdb was
+removed here; see the workspace root `README.md`), so it doubles as a local dev container rather
+than a stand-in for a real managed instance. `entrypoint.sh` mirrors the cluster-init /
+bucket-create / user-manage sequence that `platform-cloud-mdb`'s provisioner runs against
+production instances, so the container comes up with a usable cluster and bucket instead of the
+base image's unconfigured first-boot state.
 
 **Supported versions:** `7.6.5` (default), `7.2.4`, `7.1.6`
 **Default ports:** `8091-8096` (admin/services), `11210` (data)
@@ -16,8 +18,8 @@ Push this directory to a repo and connect it in the Bzync Cloud dashboard like a
 template — it builds and runs as a single-container service. Set `COUCHBASE_BUCKET`,
 `COUCHBASE_USERNAME`, and `COUCHBASE_PASSWORD` in the dashboard for the environment (see
 `.env.example`). A deployed instance here is a plain container, not a managed one — no
-automatic replication, backups, or HA. For production data, provision through
-**Databases → Create → Couchbase** (MDB) instead and link it to your app's environment.
+automatic replication, backups, or HA, and no managed alternative to fall back to on this
+tier: this deployment *is* the database for any app here that needs Couchbase.
 
 ## Run locally
 
@@ -32,10 +34,11 @@ Cluster init takes a few seconds on first boot. Once ready, the admin console is
 `http://localhost:8091` (login with `COUCHBASE_USERNAME` / `COUCHBASE_PASSWORD`), and the
 `COUCHBASE_BUCKET` bucket already exists.
 
-## Using MDB instead
+## Connecting another app to this database
 
-If you provision a real managed Couchbase from **Databases → Create → Couchbase** and link it
-to your app's environment, the platform injects these variables automatically:
+There's no dashboard "link" step on this tier — deploy this template as its own app, then set
+matching connection env vars on whichever app needs to reach it (its internal address, plus the
+`COUCHBASE_BUCKET`/`COUCHBASE_USERNAME`/`COUCHBASE_PASSWORD` you set above):
 
 ```
 DB_HOST

@@ -1,10 +1,12 @@
 # MongoDB
 
 A deployable MongoDB template — clone, push, and Bzync Cloud builds this `Dockerfile` as-is,
-same as any other template. It also matches the exact engine/version Bzync Cloud Managed
-Databases (MDB) provisions in production, so it doubles as a local dev container. MDB instances
-run as a single-node replica set (`--replSet`); this Dockerfile omits that since it isn't needed
-outside of MDB's replication tooling.
+same as any other template. It matches the exact engine/version Bzync Cloud's production Managed
+Databases (MDB) provisions — but this tier has no managed database service of its own (mdb was
+removed here; see the workspace root `README.md`), so it doubles as a local dev container rather
+than a stand-in for a real managed instance. Production MDB instances run as a single-node
+replica set (`--replSet`); this Dockerfile omits that since it isn't needed outside of MDB's own
+replication tooling.
 
 **Supported versions:** `7.0` (default), `6.0`
 **Default port:** `27017`
@@ -15,8 +17,8 @@ Push this directory to a repo and connect it in the Bzync Cloud dashboard like a
 template — it builds and runs as a single-container service. Set `MONGO_INITDB_DATABASE`,
 `MONGO_INITDB_ROOT_USERNAME`, and `MONGO_INITDB_ROOT_PASSWORD` in the dashboard for the
 environment (see `.env.example`). A deployed instance here is a plain container, not a managed
-one — no automatic replication, backups, or HA. For production data, provision through
-**Databases → Create → MongoDB** (MDB) instead and link it to your app's environment.
+one — no automatic replication, backups, or HA, and no managed alternative to fall back to on
+this tier: this deployment *is* the database for any app here that needs MongoDB.
 
 ## Run locally
 
@@ -31,10 +33,12 @@ Connect with `mongosh`:
 mongosh "mongodb://app:changeme@localhost:27017/app?authSource=admin"
 ```
 
-## Using MDB instead
+## Connecting another app to this database
 
-If you provision a real managed MongoDB from **Databases → Create → MongoDB** and link it to
-your app's environment, the platform injects these variables automatically:
+There's no dashboard "link" step on this tier — deploy this template as its own app, then set
+matching connection env vars on whichever app needs to reach it (its internal address, plus the
+`MONGO_INITDB_DATABASE`/`MONGO_INITDB_ROOT_USERNAME`/`MONGO_INITDB_ROOT_PASSWORD` you set
+above):
 
 ```
 DB_HOST

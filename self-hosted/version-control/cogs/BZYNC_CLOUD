@@ -52,9 +52,20 @@
 # environment. Use .env.example as reference — the platform seeds
 # these as defaults on first deploy.
 #
+# ── This template ─────────────────────────────────────────────────────────────
+#
+# This template deploys like any other — it ships its own Dockerfile, so
+# runtime/framework/version below are ignored (a supplied Dockerfile is
+# always used as-is). Unlike the database/* templates, there is no managed
+# Bzync equivalent to link instead — this deployment IS your Gogs instance.
+# Set GOGS_DOMAIN and GOGS_ROOT_URL to your real domain once one is
+# attached, and read README.md before flipping GOGS_DISABLE_REGISTRATION to
+# false if you want open sign-up (and note that Gogs' API needs a personal
+# access token, not your account password, even though git-over-HTTP
+# accepts the account password directly).
+#
 # ─────────────────────────────────────────────────────────────────────────────
 
 path = .
-runtime = node
-framework = n8n
-version = 22
+dockerfile = Dockerfile
+volume = /data

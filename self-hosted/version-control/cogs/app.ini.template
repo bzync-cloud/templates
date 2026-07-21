@@ -1,0 +1,31 @@
+BRAND_NAME = ${GOGS_APP_NAME}
+RUN_USER   = git
+RUN_MODE   = prod
+
+[server]
+DOMAIN           = ${GOGS_DOMAIN}
+EXTERNAL_URL     = ${GOGS_ROOT_URL}
+HTTP_PORT        = ${GOGS_HTTP_PORT}
+SSH_PORT         = ${GOGS_SSH_PORT}
+START_SSH_SERVER = false
+
+[database]
+TYPE     = ${GOGS_DB_TYPE}
+HOST     = ${GOGS_DB_HOST}
+NAME     = ${GOGS_DB_NAME}
+USER     = ${GOGS_DB_USER}
+PASSWORD = ${GOGS_DB_PASSWORD}
+PATH     = /data/gogs/data/gogs.db
+
+[security]
+INSTALL_LOCK = true
+SECRET_KEY   = ${GOGS_SECRET_KEY}
+
+[auth]
+DISABLE_REGISTRATION = ${GOGS_DISABLE_REGISTRATION}
+REQUIRE_SIGNIN_VIEW  = ${GOGS_REQUIRE_SIGNIN_VIEW}
+
+[log]
+MODE      = console
+LEVEL     = Info
+ROOT_PATH = /data/gogs/log
