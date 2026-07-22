@@ -6,7 +6,7 @@ equivalent to fall back on: this deployment **is** your Gitea instance, and its 
 holds real, non-reproducible data (repos, issues, the database, LFS objects).
 
 **Supported versions:** `1.23` (default) — set `GITEA_VERSION` as a build arg for others
-**Default port:** `3000` (HTTP only — see "About SSH" below)
+**Default port:** `3000` (HTTP — see "About SSH" below for git-over-SSH)
 
 ## Deploying
 
@@ -26,9 +26,24 @@ The image only exposes port `3000`. Bzync Cloud's ingress and health checks targ
 lowest-numbered `EXPOSE`d port in the built image, and the upstream `gitea/gitea` image bakes in
 port `22` alongside `3000` — if both were exposed, HTTP traffic would get silently routed to the
 SSH port instead of the web server. This Dockerfile rebuilds from `scratch` on top of the
-upstream filesystem specifically to drop that inherited `22` (see the comment in `Dockerfile`).
-Git-over-SSH still runs inside the container, just not reachable through Bzync Cloud's
-HTTP(S)-only ingress — clone over HTTPS instead:
+upstream filesystem specifically to drop that inherited `22` (see the comment in `Dockerfile`),
+which is still correct and unrelated to the feature below — dropping the image's own `EXPOSE 22`
+only affects Traefik's port autodetection for HTTP, not whether SSH can be reached.
+
+Real `git@host:owner/repo.git` clones need the project's **"Enable Git SSH access"** toggle
+(Project → Git SSH in the dashboard — requires a plan with that feature). Enabling it allocates a
+dedicated port and binds it straight to the container's SSH port, bypassing the HTTP(S) ingress
+entirely — it works whether or not this Dockerfile exposes `22`. Once enabled, the dashboard shows
+the exact command:
+
+```bash
+git clone ssh://git@your-app.app.bzync.cloud:20005/owner/repo.git
+```
+
+Also set `GITEA__server__SSH_DOMAIN`/`GITEA__server__SSH_PORT` in `.env.example` to the same
+host/port shown there — without them, Gitea's own generated clone URLs (shown in its web UI)
+still advertise `localhost`, even though the SSH connection itself works. HTTPS clone always
+works regardless, with or without this toggle:
 
 ```bash
 git clone https://your-domain.example.com/owner/repo.git

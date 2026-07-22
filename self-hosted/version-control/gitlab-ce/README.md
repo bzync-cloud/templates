@@ -10,7 +10,7 @@ back on — this deployment **is** your GitLab instance, and `/etc/gitlab`, `/va
 
 **Supported versions:** `17.5.2-ce.0` (default) — set `GITLAB_VERSION` as a build arg for
 others; GitLab CE tags follow `<version>-ce.0`
-**Default port:** `80` (HTTP only — see "About SSH and HTTPS" below)
+**Default port:** `80` (HTTP — see "About SSH and HTTPS" below for git-over-SSH)
 
 ## Before you deploy this: resource requirements
 
@@ -70,9 +70,24 @@ traffic to the SSH port instead of the web server. This Dockerfile rebuilds from
 of the upstream filesystem specifically to drop `22` and `443` (see the comment in `Dockerfile`).
 `443` is dropped for a second reason too: there's no TLS certificate configured inside the
 container in this deployment shape, so nothing would answer on it anyway — terminate TLS at
-whatever sits in front of this (the platform's own edge, once a domain is attached).
-Git-over-SSH still runs inside the container, just not reachable through Bzync Cloud's
-HTTP(S)-only ingress — clone over HTTPS instead:
+whatever sits in front of this (the platform's own edge, once a domain is attached). None of that
+affects the feature below — dropping the image's own `EXPOSE 22`/`443` only affects Traefik's
+port autodetection for HTTP, not whether SSH can be reached.
+
+Real `git@host:owner/repo.git` clones need the project's **"Enable Git SSH access"** toggle
+(Project → Git SSH in the dashboard — requires a plan with that feature). Enabling it allocates a
+dedicated port and binds it straight to the container's built-in `gitlab-shell` SSH daemon,
+bypassing the HTTP(S) ingress entirely. Once enabled, the dashboard shows the exact command:
+
+```bash
+git clone ssh://git@your-app.app.bzync.cloud:20005/owner/repo.git
+```
+
+Also append `gitlab_rails['gitlab_shell_ssh_port'] = 20005;` to `GITLAB_OMNIBUS_CONFIG` (see
+`.env.example`) with the same port shown there — without it, GitLab's own generated clone URLs
+(shown in its web UI) still advertise the default port `22`, even though the SSH connection
+itself works on the allocated port. HTTPS clone always works regardless, with or without this
+toggle:
 
 ```bash
 git clone https://your-domain.example.com/owner/repo.git
