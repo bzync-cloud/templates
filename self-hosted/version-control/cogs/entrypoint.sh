@@ -25,4 +25,15 @@ fi
 mkdir -p /app/gogs/custom
 ln -sfn /data/gogs/conf /app/gogs/custom/conf
 
-exec /app/gogs/docker/start.sh
+# Backgrounded (rather than exec'd) so bzync-create-admin.sh can run
+# alongside it — the trap forwards docker stop's SIGTERM through to Gogs
+# for a clean shutdown instead of waiting out the full kill timeout.
+/app/gogs/docker/start.sh &
+MAIN_PID=$!
+trap 'kill -TERM "$MAIN_PID" 2>/dev/null' TERM INT
+
+if [ -n "$GOGS_ADMIN_USERNAME" ] && [ -n "$GOGS_ADMIN_PASSWORD" ]; then
+  /usr/local/bin/bzync-create-admin.sh &
+fi
+
+wait "$MAIN_PID"

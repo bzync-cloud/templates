@@ -40,7 +40,8 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 
 COPY app.ini.template /etc/gogs/app.ini.template
 COPY entrypoint.sh /usr/local/bin/bzync-entrypoint.sh
-RUN chmod +x /usr/local/bin/bzync-entrypoint.sh
+COPY bzync-create-admin.sh /usr/local/bin/bzync-create-admin.sh
+RUN chmod +x /usr/local/bin/bzync-entrypoint.sh /usr/local/bin/bzync-create-admin.sh
 
 # /data holds repos, the sqlite DB, and the rendered app.ini (persisted at
 # /data/gogs/conf/app.ini, symlinked into place by entrypoint.sh on every

@@ -9,6 +9,7 @@
     "dev": "sh start.sh"
   },
   "dependencies": {
-    "n8n": "^1.95.0"
+    "n8n": "^1.95.0",
+    "bcryptjs": "^2.4.3"
   }
 }

@@ -17,7 +17,7 @@ Push this directory to a repo and connect it in the Bzync Cloud dashboard. Befor
 1. Set `GOGS_DOMAIN` and `GOGS_ROOT_URL` to your real domain (see `.env.example`).
 2. Leave `GOGS_SECRET_KEY=changeme` as-is — the platform replaces any literal `changeme` value
    with a generated random secret on first deploy.
-3. Create your admin account (registration is disabled by default — see below).
+3. The first admin account is created for you automatically — see below.
 
 Unlike Gitea/Forgejo's `GITEA__` environment variables, Gogs has no env-to-config system of its
 own. This template's `entrypoint.sh` renders `/data/gogs/conf/app.ini` from the `GOGS_*`
@@ -44,9 +44,17 @@ git clone https://your-domain.example.com/owner/repo.git
 ### Creating the first admin account
 
 `GOGS_DISABLE_REGISTRATION=true` by default (production-hardened: no open sign-up), so there's no
-sign-up form to create the first user. Create it from a shell on the running container — note the
-username **must run as `git`**, and `admin` is a reserved username in Gogs (pick something else,
-e.g. `bzyncadmin`):
+sign-up form to create the first user. Instead, `entrypoint.sh` creates the account itself from
+`GOGS_ADMIN_USERNAME` / `GOGS_ADMIN_PASSWORD` / `GOGS_ADMIN_EMAIL` (see `.env.example`) once the
+instance is up — it polls for `app.ini` and retries past Gogs' first-boot migration window, so
+there's nothing to babysit. Leaving `GOGS_ADMIN_PASSWORD=changeme` in place gets you a strong
+generated password the same way `SECRET_KEY` does; find it in the dashboard's Variables tab after
+the first deploy. `admin` is a reserved username in Gogs, hence the default of `bzyncadmin` — the
+script refuses to run rather than loop forever if you set it to `admin` anyway. It's safe to leave
+this running on every boot — it no-ops once that username already exists.
+
+To skip this and create the account yourself instead, unset `GOGS_ADMIN_USERNAME` or
+`GOGS_ADMIN_PASSWORD` and run (username must not be `admin`):
 
 ```bash
 docker exec -u git <container> /app/gogs/gogs admin create-user \

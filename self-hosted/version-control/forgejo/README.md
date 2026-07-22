@@ -21,7 +21,7 @@ Push this directory to a repo and connect it in the Bzync Cloud dashboard. Befor
    `changeme` value with a generated random secret on first deploy. `INTERNAL_TOKEN` and the
    OAuth2 `JWT_SECRET` don't need setting at all — Forgejo generates and persists both to
    `/data/gitea/conf/app.ini` itself on first boot.
-3. Create your admin account (registration is disabled by default — see below).
+3. The first admin account is created for you automatically — see below.
 
 ### About SSH
 
@@ -40,8 +40,17 @@ git clone https://your-domain.example.com/owner/repo.git
 ### Creating the first admin account
 
 `GITEA__service__DISABLE_REGISTRATION=true` by default (production-hardened: no open sign-up),
-so there's no install wizard or sign-up form to create the first user. Once the container is up
-and has finished its first boot, create it from a shell on the running container:
+so there's no install wizard or sign-up form to create the first user. Instead,
+`bzync-entrypoint.sh` wraps the upstream image's entrypoint and creates the account itself from
+`GITEA_ADMIN_USERNAME` / `GITEA_ADMIN_PASSWORD` / `GITEA_ADMIN_EMAIL` (see `.env.example`) once
+the container has booted — it polls for `app.ini` and retries past the `database is locked`
+window that happens mid-migration, so there's nothing to babysit. Leaving
+`GITEA_ADMIN_PASSWORD=changeme` in place gets you a strong generated password the same way
+`SECRET_KEY` does; find it in the dashboard's Variables tab after the first deploy. It's safe to
+leave this running on every boot — it no-ops once that username already exists.
+
+To skip this and create the account yourself instead, unset `GITEA_ADMIN_USERNAME` or
+`GITEA_ADMIN_PASSWORD` and run:
 
 ```bash
 docker exec -u git <container> gitea admin user create \
@@ -49,9 +58,6 @@ docker exec -u git <container> gitea admin user create \
   --email admin@your-domain.example.com --admin \
   --config /data/gitea/conf/app.ini
 ```
-
-If this returns `database is locked`, the SQLite database is still mid-migration from boot —
-wait a few seconds and retry.
 
 ## Run locally
 

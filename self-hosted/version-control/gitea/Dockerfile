@@ -28,6 +28,12 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     GITEA__service__DISABLE_REGISTRATION=true \
     GITEA__service__REQUIRE_SIGNIN_VIEW=true
 
+# Wraps the upstream entrypoint to auto-create the first admin user from
+# GITEA_ADMIN_* env vars — see bzync-entrypoint.sh and the README.
+COPY bzync-entrypoint.sh /usr/local/bin/bzync-entrypoint.sh
+COPY bzync-create-admin.sh /usr/local/bin/bzync-create-admin.sh
+RUN chmod +x /usr/local/bin/bzync-entrypoint.sh /usr/local/bin/bzync-create-admin.sh
+
 # /data holds repos, the sqlite DB, avatars, LFS objects, and the generated
 # app.ini (at /data/gitea/conf/app.ini, including the INTERNAL_TOKEN and
 # JWT_SECRET Gitea generates itself on first boot) — losing this volume on a
@@ -43,5 +49,5 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD curl -fsS http://localhost:3000/api/healthz || exit 1
 
 WORKDIR /
-ENTRYPOINT ["/usr/bin/entrypoint"]
+ENTRYPOINT ["/usr/local/bin/bzync-entrypoint.sh"]
 CMD ["/usr/bin/s6-svscan", "/etc/s6"]
