@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-wordpress",
+  "displayName": "WordPress",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "php",
+    "self-hosted",
+    "wordpress"
+  ],
+  "description": "WordPress self-hosted application for Bzync Cloud."
+}

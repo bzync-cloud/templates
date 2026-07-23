@@ -1,0 +1,14 @@
+{
+  "id": "frontend-solid-ts",
+  "displayName": "Solid (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "solid-ts",
+    "vite-solid-ts",
+    "typescript"
+  ],
+  "description": "Solid (TypeScript) static-output starter template for Bzync Cloud."
+}

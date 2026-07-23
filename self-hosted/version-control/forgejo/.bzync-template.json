@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-version-control-forgejo",
+  "displayName": "Forgejo",
+  "category": "self-hosted",
+  "subcategory": "version-control",
+  "tags": [
+    "forgejo",
+    "self-hosted",
+    "version-control"
+  ],
+  "description": "Forgejo self-hosted application for Bzync Cloud."
+}

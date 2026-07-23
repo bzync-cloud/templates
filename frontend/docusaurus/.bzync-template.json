@@ -1,0 +1,12 @@
+{
+  "id": "frontend-docusaurus",
+  "displayName": "Docusaurus",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "docusaurus",
+    "frontend",
+    "node"
+  ],
+  "description": "Docusaurus static-output starter template for Bzync Cloud."
+}

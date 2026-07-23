@@ -1,0 +1,12 @@
+{
+  "id": "background-jobs-worker-node",
+  "displayName": "Node.js Worker",
+  "category": "background-jobs",
+  "subcategory": "worker",
+  "tags": [
+    "background-jobs",
+    "node",
+    "worker"
+  ],
+  "description": "Node.js Worker background job template for Bzync Cloud."
+}

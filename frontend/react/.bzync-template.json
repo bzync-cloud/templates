@@ -1,0 +1,13 @@
+{
+  "id": "frontend-react",
+  "displayName": "React",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "react",
+    "vite-react"
+  ],
+  "description": "React static-output starter template for Bzync Cloud."
+}

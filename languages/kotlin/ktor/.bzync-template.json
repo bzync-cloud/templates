@@ -1,0 +1,12 @@
+{
+  "id": "languages-kotlin-ktor",
+  "displayName": "Ktor",
+  "category": "languages",
+  "subcategory": "kotlin",
+  "tags": [
+    "kotlin",
+    "ktor",
+    "languages"
+  ],
+  "description": "Ktor starter template for Bzync Cloud."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-plain",
+  "displayName": "Plain",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "languages",
+    "plain",
+    "python"
+  ],
+  "description": "Plain starter template for Bzync Cloud."
+}

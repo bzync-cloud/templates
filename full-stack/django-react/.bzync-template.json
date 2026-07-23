@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-django-react",
+  "displayName": "Django + React",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "django",
+    "django-react",
+    "full-stack",
+    "python"
+  ],
+  "description": "Django + React multi-service starter template for Bzync Cloud."
+}

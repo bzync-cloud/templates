@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-laminas",
+  "displayName": "Laminas",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "laminas",
+    "languages",
+    "php"
+  ],
+  "description": "Laminas starter template for Bzync Cloud."
+}

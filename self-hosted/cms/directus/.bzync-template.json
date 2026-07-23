@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-directus",
+  "displayName": "Directus",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "directus",
+    "node",
+    "self-hosted"
+  ],
+  "description": "Directus self-hosted application for Bzync Cloud."
+}

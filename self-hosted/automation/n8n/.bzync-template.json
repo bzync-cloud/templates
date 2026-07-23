@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-automation-n8n",
+  "displayName": "n8n",
+  "category": "self-hosted",
+  "subcategory": "automation",
+  "tags": [
+    "automation",
+    "n8n",
+    "node",
+    "self-hosted"
+  ],
+  "description": "n8n self-hosted application for Bzync Cloud."
+}

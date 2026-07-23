@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-laravel",
+  "displayName": "Laravel",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "languages",
+    "laravel",
+    "php"
+  ],
+  "description": "Laravel starter template for Bzync Cloud."
+}

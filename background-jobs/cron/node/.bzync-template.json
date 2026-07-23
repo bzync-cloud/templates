@@ -1,0 +1,12 @@
+{
+  "id": "background-jobs-cron-node",
+  "displayName": "Node.js Cron Job",
+  "category": "background-jobs",
+  "subcategory": "cron",
+  "tags": [
+    "background-jobs",
+    "cron",
+    "node"
+  ],
+  "description": "Node.js Cron Job background job template for Bzync Cloud."
+}

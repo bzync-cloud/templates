@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-flask",
+  "displayName": "Flask",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "flask",
+    "languages",
+    "python"
+  ],
+  "description": "Flask starter template for Bzync Cloud."
+}

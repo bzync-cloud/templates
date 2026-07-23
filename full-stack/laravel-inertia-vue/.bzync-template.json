@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-laravel-inertia-vue",
+  "displayName": "Laravel + Inertia (Vue)",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "full-stack",
+    "laravel",
+    "laravel-inertia-vue",
+    "php"
+  ],
+  "description": "Laravel + Inertia (Vue) multi-service starter template for Bzync Cloud."
+}

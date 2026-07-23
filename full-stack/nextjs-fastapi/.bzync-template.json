@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-nextjs-fastapi",
+  "displayName": "Next.js + FastAPI",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "fastapi",
+    "full-stack",
+    "nextjs-fastapi",
+    "python"
+  ],
+  "description": "Next.js + FastAPI multi-service starter template for Bzync Cloud."
+}

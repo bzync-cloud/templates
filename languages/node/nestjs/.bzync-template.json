@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-nestjs",
+  "displayName": "NestJS",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "languages",
+    "nestjs",
+    "node"
+  ],
+  "description": "NestJS starter template for Bzync Cloud."
+}

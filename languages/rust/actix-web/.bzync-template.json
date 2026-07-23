@@ -1,0 +1,12 @@
+{
+  "id": "languages-rust-actix-web",
+  "displayName": "Actix Web",
+  "category": "languages",
+  "subcategory": "rust",
+  "tags": [
+    "actix-web",
+    "languages",
+    "rust"
+  ],
+  "description": "Actix Web starter template for Bzync Cloud."
+}

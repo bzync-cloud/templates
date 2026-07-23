@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-yii",
+  "displayName": "Yii",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "languages",
+    "php",
+    "yii"
+  ],
+  "description": "Yii starter template for Bzync Cloud."
+}

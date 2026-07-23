@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-streamlit",
+  "displayName": "Streamlit",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "languages",
+    "python",
+    "streamlit"
+  ],
+  "description": "Streamlit starter template for Bzync Cloud."
+}

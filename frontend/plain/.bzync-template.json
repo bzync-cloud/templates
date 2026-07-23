@@ -1,0 +1,12 @@
+{
+  "id": "frontend-plain",
+  "displayName": "Plain",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "plain",
+    "static"
+  ],
+  "description": "Plain static-output starter template for Bzync Cloud."
+}

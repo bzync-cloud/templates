@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-vite-react-laravel",
+  "displayName": "React (Vite) + Laravel",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "full-stack",
+    "laravel",
+    "php",
+    "vite-react-laravel"
+  ],
+  "description": "React (Vite) + Laravel multi-service starter template for Bzync Cloud."
+}

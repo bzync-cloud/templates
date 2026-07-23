@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-codeigniter",
+  "displayName": "CodeIgniter",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "codeigniter",
+    "languages",
+    "php"
+  ],
+  "description": "CodeIgniter starter template for Bzync Cloud."
+}

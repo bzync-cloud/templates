@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-joomla",
+  "displayName": "Joomla",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "joomla",
+    "php",
+    "self-hosted"
+  ],
+  "description": "Joomla self-hosted application for Bzync Cloud."
+}

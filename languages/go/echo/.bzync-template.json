@@ -1,0 +1,12 @@
+{
+  "id": "languages-go-echo",
+  "displayName": "Echo",
+  "category": "languages",
+  "subcategory": "go",
+  "tags": [
+    "echo",
+    "go",
+    "languages"
+  ],
+  "description": "Echo starter template for Bzync Cloud."
+}

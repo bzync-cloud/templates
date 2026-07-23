@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-document-mongodb",
+  "displayName": "MongoDB",
+  "category": "data-stores",
+  "subcategory": "document",
+  "tags": [
+    "data-stores",
+    "document",
+    "mongodb"
+  ],
+  "description": "MongoDB data store for Bzync Cloud."
+}

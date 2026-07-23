@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-celery-worker",
+  "displayName": "Celery Worker",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "celery-worker",
+    "languages",
+    "python"
+  ],
+  "description": "Celery Worker starter template for Bzync Cloud."
+}

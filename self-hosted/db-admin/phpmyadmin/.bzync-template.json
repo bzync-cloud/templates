@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-db-admin-phpmyadmin",
+  "displayName": "phpMyAdmin",
+  "category": "self-hosted",
+  "subcategory": "db-admin",
+  "tags": [
+    "db-admin",
+    "phpmyadmin",
+    "self-hosted"
+  ],
+  "description": "phpMyAdmin self-hosted application for Bzync Cloud."
+}

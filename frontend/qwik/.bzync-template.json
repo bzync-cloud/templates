@@ -1,0 +1,13 @@
+{
+  "id": "frontend-qwik",
+  "displayName": "Qwik",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "qwik",
+    "vite-qwik"
+  ],
+  "description": "Qwik static-output starter template for Bzync Cloud."
+}

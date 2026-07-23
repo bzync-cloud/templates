@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-relational-postgres",
+  "displayName": "PostgreSQL",
+  "category": "data-stores",
+  "subcategory": "relational",
+  "tags": [
+    "data-stores",
+    "postgres",
+    "relational"
+  ],
+  "description": "PostgreSQL data store for Bzync Cloud."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "frontend-preact-ts",
+  "displayName": "Preact (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "preact-ts",
+    "vite-preact-ts",
+    "typescript"
+  ],
+  "description": "Preact (TypeScript) static-output starter template for Bzync Cloud."
+}

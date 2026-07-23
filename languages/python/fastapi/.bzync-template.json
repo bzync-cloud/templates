@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-fastapi",
+  "displayName": "FastAPI",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "fastapi",
+    "languages",
+    "python"
+  ],
+  "description": "FastAPI starter template for Bzync Cloud."
+}

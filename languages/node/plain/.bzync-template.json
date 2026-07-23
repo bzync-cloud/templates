@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-plain",
+  "displayName": "Plain",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "languages",
+    "node",
+    "plain"
+  ],
+  "description": "Plain starter template for Bzync Cloud."
+}

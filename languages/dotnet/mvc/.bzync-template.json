@@ -1,0 +1,12 @@
+{
+  "id": "languages-dotnet-mvc",
+  "displayName": "ASP.NET MVC",
+  "category": "languages",
+  "subcategory": "dotnet",
+  "tags": [
+    "dotnet",
+    "languages",
+    "mvc"
+  ],
+  "description": "ASP.NET MVC starter template for Bzync Cloud."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-sanic",
+  "displayName": "Sanic",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "languages",
+    "python",
+    "sanic"
+  ],
+  "description": "Sanic starter template for Bzync Cloud."
+}

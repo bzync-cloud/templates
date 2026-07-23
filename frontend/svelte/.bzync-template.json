@@ -1,0 +1,13 @@
+{
+  "id": "frontend-svelte",
+  "displayName": "Svelte",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "svelte",
+    "vite-svelte"
+  ],
+  "description": "Svelte static-output starter template for Bzync Cloud."
+}

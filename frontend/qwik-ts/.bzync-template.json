@@ -1,0 +1,14 @@
+{
+  "id": "frontend-qwik-ts",
+  "displayName": "Qwik (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "qwik-ts",
+    "vite-qwik-ts",
+    "typescript"
+  ],
+  "description": "Qwik (TypeScript) static-output starter template for Bzync Cloud."
+}

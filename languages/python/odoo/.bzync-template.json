@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-odoo",
+  "displayName": "Odoo",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "languages",
+    "odoo",
+    "python"
+  ],
+  "description": "Odoo starter template for Bzync Cloud."
+}

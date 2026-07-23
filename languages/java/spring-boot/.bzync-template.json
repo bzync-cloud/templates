@@ -1,0 +1,12 @@
+{
+  "id": "languages-java-spring-boot",
+  "displayName": "Spring Boot",
+  "category": "languages",
+  "subcategory": "java",
+  "tags": [
+    "java",
+    "languages",
+    "spring-boot"
+  ],
+  "description": "Spring Boot starter template for Bzync Cloud."
+}

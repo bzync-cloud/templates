@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-db-admin-adminer",
+  "displayName": "Adminer",
+  "category": "self-hosted",
+  "subcategory": "db-admin",
+  "tags": [
+    "adminer",
+    "db-admin",
+    "self-hosted"
+  ],
+  "description": "Adminer self-hosted application for Bzync Cloud."
+}

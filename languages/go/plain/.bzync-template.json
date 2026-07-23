@@ -1,0 +1,12 @@
+{
+  "id": "languages-go-plain",
+  "displayName": "Plain",
+  "category": "languages",
+  "subcategory": "go",
+  "tags": [
+    "go",
+    "languages",
+    "plain"
+  ],
+  "description": "Plain starter template for Bzync Cloud."
+}

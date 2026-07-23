@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-ecommerce-magento",
+  "displayName": "Magento",
+  "category": "self-hosted",
+  "subcategory": "ecommerce",
+  "tags": [
+    "ecommerce",
+    "magento",
+    "php",
+    "self-hosted"
+  ],
+  "description": "Magento self-hosted application for Bzync Cloud."
+}

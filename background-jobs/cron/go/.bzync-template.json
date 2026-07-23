@@ -1,0 +1,12 @@
+{
+  "id": "background-jobs-cron-go",
+  "displayName": "Go Cron Job",
+  "category": "background-jobs",
+  "subcategory": "cron",
+  "tags": [
+    "background-jobs",
+    "cron",
+    "go"
+  ],
+  "description": "Go Cron Job background job template for Bzync Cloud."
+}

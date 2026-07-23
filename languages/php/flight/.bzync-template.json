@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-flight",
+  "displayName": "Flight",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "flight",
+    "languages",
+    "php"
+  ],
+  "description": "Flight starter template for Bzync Cloud."
+}

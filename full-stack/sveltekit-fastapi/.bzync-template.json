@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-sveltekit-fastapi",
+  "displayName": "SvelteKit + FastAPI",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "fastapi",
+    "full-stack",
+    "python",
+    "sveltekit-fastapi"
+  ],
+  "description": "SvelteKit + FastAPI multi-service starter template for Bzync Cloud."
+}

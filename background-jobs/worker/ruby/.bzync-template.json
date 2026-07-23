@@ -1,0 +1,12 @@
+{
+  "id": "background-jobs-worker-ruby",
+  "displayName": "Ruby Worker",
+  "category": "background-jobs",
+  "subcategory": "worker",
+  "tags": [
+    "background-jobs",
+    "ruby",
+    "worker"
+  ],
+  "description": "Ruby Worker background job template for Bzync Cloud."
+}

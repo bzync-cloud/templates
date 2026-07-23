@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-nextjs-go",
+  "displayName": "Next.js + Go",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "full-stack",
+    "go",
+    "nextjs",
+    "nextjs-go"
+  ],
+  "description": "Next.js + Go multi-service starter template for Bzync Cloud."
+}

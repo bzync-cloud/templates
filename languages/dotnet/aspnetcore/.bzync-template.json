@@ -1,0 +1,12 @@
+{
+  "id": "languages-dotnet-aspnetcore",
+  "displayName": "ASP.NET Core",
+  "category": "languages",
+  "subcategory": "dotnet",
+  "tags": [
+    "aspnetcore",
+    "dotnet",
+    "languages"
+  ],
+  "description": "ASP.NET Core starter template for Bzync Cloud."
+}

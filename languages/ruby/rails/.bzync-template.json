@@ -1,0 +1,12 @@
+{
+  "id": "languages-ruby-rails",
+  "displayName": "Rails",
+  "category": "languages",
+  "subcategory": "ruby",
+  "tags": [
+    "languages",
+    "rails",
+    "ruby"
+  ],
+  "description": "Rails starter template for Bzync Cloud."
+}

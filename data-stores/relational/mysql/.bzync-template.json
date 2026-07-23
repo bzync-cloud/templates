@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-relational-mysql",
+  "displayName": "MySQL",
+  "category": "data-stores",
+  "subcategory": "relational",
+  "tags": [
+    "data-stores",
+    "mysql",
+    "relational"
+  ],
+  "description": "MySQL data store for Bzync Cloud."
+}

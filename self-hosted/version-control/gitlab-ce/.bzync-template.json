@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-version-control-gitlab-ce",
+  "displayName": "GitLab CE",
+  "category": "self-hosted",
+  "subcategory": "version-control",
+  "tags": [
+    "gitlab-ce",
+    "self-hosted",
+    "version-control"
+  ],
+  "description": "GitLab CE self-hosted application for Bzync Cloud."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-project-management-vikunja",
+  "displayName": "Vikunja",
+  "category": "self-hosted",
+  "subcategory": "project-management",
+  "tags": [
+    "project-management",
+    "self-hosted",
+    "vikunja"
+  ],
+  "description": "Vikunja self-hosted application for Bzync Cloud."
+}

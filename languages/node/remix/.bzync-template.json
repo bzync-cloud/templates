@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-remix",
+  "displayName": "Remix",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "languages",
+    "node",
+    "remix"
+  ],
+  "description": "Remix starter template for Bzync Cloud."
+}

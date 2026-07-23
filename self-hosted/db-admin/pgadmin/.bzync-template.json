@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-db-admin-pgadmin",
+  "displayName": "pgAdmin",
+  "category": "self-hosted",
+  "subcategory": "db-admin",
+  "tags": [
+    "db-admin",
+    "pgadmin",
+    "self-hosted"
+  ],
+  "description": "pgAdmin self-hosted application for Bzync Cloud."
+}

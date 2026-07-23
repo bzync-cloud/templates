@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-gradio",
+  "displayName": "Gradio",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "gradio",
+    "languages",
+    "python"
+  ],
+  "description": "Gradio starter template for Bzync Cloud."
+}

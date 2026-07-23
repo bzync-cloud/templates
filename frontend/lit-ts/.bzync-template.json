@@ -1,0 +1,14 @@
+{
+  "id": "frontend-lit-ts",
+  "displayName": "Lit (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "lit-ts",
+    "node",
+    "vite-lit-ts",
+    "typescript"
+  ],
+  "description": "Lit (TypeScript) static-output starter template for Bzync Cloud."
+}

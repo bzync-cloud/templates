@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-astro-strapi",
+  "displayName": "Astro + Strapi",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "astro-strapi",
+    "full-stack",
+    "node",
+    "strapi"
+  ],
+  "description": "Astro + Strapi multi-service starter template for Bzync Cloud."
+}

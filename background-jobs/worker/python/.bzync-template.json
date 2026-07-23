@@ -1,0 +1,12 @@
+{
+  "id": "background-jobs-worker-python",
+  "displayName": "Python Worker",
+  "category": "background-jobs",
+  "subcategory": "worker",
+  "tags": [
+    "background-jobs",
+    "python",
+    "worker"
+  ],
+  "description": "Python Worker background job template for Bzync Cloud."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "languages-rust-axum",
+  "displayName": "Axum",
+  "category": "languages",
+  "subcategory": "rust",
+  "tags": [
+    "axum",
+    "languages",
+    "rust"
+  ],
+  "description": "Axum starter template for Bzync Cloud."
+}

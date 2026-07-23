@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-sveltekit",
+  "displayName": "SvelteKit",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "languages",
+    "node",
+    "sveltekit"
+  ],
+  "description": "SvelteKit starter template for Bzync Cloud."
+}

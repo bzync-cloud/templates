@@ -1,0 +1,13 @@
+{
+  "id": "frontend-solid",
+  "displayName": "Solid",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "solid",
+    "vite-solid"
+  ],
+  "description": "Solid static-output starter template for Bzync Cloud."
+}

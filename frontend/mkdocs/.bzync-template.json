@@ -1,0 +1,12 @@
+{
+  "id": "frontend-mkdocs",
+  "displayName": "MkDocs",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "mkdocs",
+    "static"
+  ],
+  "description": "MkDocs static-output starter template for Bzync Cloud."
+}

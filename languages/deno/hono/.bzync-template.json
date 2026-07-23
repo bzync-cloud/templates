@@ -1,0 +1,12 @@
+{
+  "id": "languages-deno-hono",
+  "displayName": "Hono",
+  "category": "languages",
+  "subcategory": "deno",
+  "tags": [
+    "deno",
+    "hono",
+    "languages"
+  ],
+  "description": "Hono starter template for Bzync Cloud."
+}

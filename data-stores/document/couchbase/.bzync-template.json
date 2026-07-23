@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-document-couchbase",
+  "displayName": "Couchbase",
+  "category": "data-stores",
+  "subcategory": "document",
+  "tags": [
+    "couchbase",
+    "data-stores",
+    "document"
+  ],
+  "description": "Couchbase data store for Bzync Cloud."
+}

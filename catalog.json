@@ -1,0 +1,1729 @@
+{
+  "templates": [
+    {
+      "id": "background-jobs-cron-go",
+      "displayName": "Go Cron Job",
+      "category": "background-jobs",
+      "subcategory": "cron",
+      "tags": [
+        "background-jobs",
+        "cron",
+        "go"
+      ],
+      "description": "Go Cron Job background job template for Bzync Cloud.",
+      "path": "background-jobs/cron/go"
+    },
+    {
+      "id": "background-jobs-cron-node",
+      "displayName": "Node.js Cron Job",
+      "category": "background-jobs",
+      "subcategory": "cron",
+      "tags": [
+        "background-jobs",
+        "cron",
+        "node"
+      ],
+      "description": "Node.js Cron Job background job template for Bzync Cloud.",
+      "path": "background-jobs/cron/node"
+    },
+    {
+      "id": "background-jobs-cron-python",
+      "displayName": "Python Cron Job",
+      "category": "background-jobs",
+      "subcategory": "cron",
+      "tags": [
+        "background-jobs",
+        "cron",
+        "python"
+      ],
+      "description": "Python Cron Job background job template for Bzync Cloud.",
+      "path": "background-jobs/cron/python"
+    },
+    {
+      "id": "background-jobs-cron-ruby",
+      "displayName": "Ruby Cron Job",
+      "category": "background-jobs",
+      "subcategory": "cron",
+      "tags": [
+        "background-jobs",
+        "cron",
+        "ruby"
+      ],
+      "description": "Ruby Cron Job background job template for Bzync Cloud.",
+      "path": "background-jobs/cron/ruby"
+    },
+    {
+      "id": "background-jobs-worker-bun",
+      "displayName": "Bun Worker",
+      "category": "background-jobs",
+      "subcategory": "worker",
+      "tags": [
+        "background-jobs",
+        "bun",
+        "worker"
+      ],
+      "description": "Bun Worker background job template for Bzync Cloud.",
+      "path": "background-jobs/worker/bun"
+    },
+    {
+      "id": "background-jobs-worker-go",
+      "displayName": "Go Worker",
+      "category": "background-jobs",
+      "subcategory": "worker",
+      "tags": [
+        "background-jobs",
+        "go",
+        "worker"
+      ],
+      "description": "Go Worker background job template for Bzync Cloud.",
+      "path": "background-jobs/worker/go"
+    },
+    {
+      "id": "background-jobs-worker-node",
+      "displayName": "Node.js Worker",
+      "category": "background-jobs",
+      "subcategory": "worker",
+      "tags": [
+        "background-jobs",
+        "node",
+        "worker"
+      ],
+      "description": "Node.js Worker background job template for Bzync Cloud.",
+      "path": "background-jobs/worker/node"
+    },
+    {
+      "id": "background-jobs-worker-python",
+      "displayName": "Python Worker",
+      "category": "background-jobs",
+      "subcategory": "worker",
+      "tags": [
+        "background-jobs",
+        "python",
+        "worker"
+      ],
+      "description": "Python Worker background job template for Bzync Cloud.",
+      "path": "background-jobs/worker/python"
+    },
+    {
+      "id": "background-jobs-worker-ruby",
+      "displayName": "Ruby Worker",
+      "category": "background-jobs",
+      "subcategory": "worker",
+      "tags": [
+        "background-jobs",
+        "ruby",
+        "worker"
+      ],
+      "description": "Ruby Worker background job template for Bzync Cloud.",
+      "path": "background-jobs/worker/ruby"
+    },
+    {
+      "id": "data-stores-cache-redis",
+      "displayName": "Redis",
+      "category": "data-stores",
+      "subcategory": "cache",
+      "tags": [
+        "cache",
+        "data-stores",
+        "redis"
+      ],
+      "description": "Redis data store for Bzync Cloud.",
+      "path": "data-stores/cache/redis"
+    },
+    {
+      "id": "data-stores-document-couchbase",
+      "displayName": "Couchbase",
+      "category": "data-stores",
+      "subcategory": "document",
+      "tags": [
+        "couchbase",
+        "data-stores",
+        "document"
+      ],
+      "description": "Couchbase data store for Bzync Cloud.",
+      "path": "data-stores/document/couchbase"
+    },
+    {
+      "id": "data-stores-document-mongodb",
+      "displayName": "MongoDB",
+      "category": "data-stores",
+      "subcategory": "document",
+      "tags": [
+        "data-stores",
+        "document",
+        "mongodb"
+      ],
+      "description": "MongoDB data store for Bzync Cloud.",
+      "path": "data-stores/document/mongodb"
+    },
+    {
+      "id": "data-stores-relational-mariadb",
+      "displayName": "MariaDB",
+      "category": "data-stores",
+      "subcategory": "relational",
+      "tags": [
+        "data-stores",
+        "mariadb",
+        "relational"
+      ],
+      "description": "MariaDB data store for Bzync Cloud.",
+      "path": "data-stores/relational/mariadb"
+    },
+    {
+      "id": "data-stores-relational-mysql",
+      "displayName": "MySQL",
+      "category": "data-stores",
+      "subcategory": "relational",
+      "tags": [
+        "data-stores",
+        "mysql",
+        "relational"
+      ],
+      "description": "MySQL data store for Bzync Cloud.",
+      "path": "data-stores/relational/mysql"
+    },
+    {
+      "id": "data-stores-relational-postgres",
+      "displayName": "PostgreSQL",
+      "category": "data-stores",
+      "subcategory": "relational",
+      "tags": [
+        "data-stores",
+        "postgres",
+        "relational"
+      ],
+      "description": "PostgreSQL data store for Bzync Cloud.",
+      "path": "data-stores/relational/postgres"
+    },
+    {
+      "id": "frontend-angular",
+      "displayName": "Angular",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "angular",
+        "frontend",
+        "node"
+      ],
+      "description": "Angular static-output starter template for Bzync Cloud.",
+      "path": "frontend/angular"
+    },
+    {
+      "id": "frontend-astro",
+      "displayName": "Astro",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "astro",
+        "frontend",
+        "node"
+      ],
+      "description": "Astro static-output starter template for Bzync Cloud.",
+      "path": "frontend/astro"
+    },
+    {
+      "id": "frontend-docusaurus",
+      "displayName": "Docusaurus",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "docusaurus",
+        "frontend",
+        "node"
+      ],
+      "description": "Docusaurus static-output starter template for Bzync Cloud.",
+      "path": "frontend/docusaurus"
+    },
+    {
+      "id": "frontend-eleventy",
+      "displayName": "Eleventy",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "eleventy",
+        "frontend",
+        "node"
+      ],
+      "description": "Eleventy static-output starter template for Bzync Cloud.",
+      "path": "frontend/eleventy"
+    },
+    {
+      "id": "frontend-hugo",
+      "displayName": "Hugo",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "hugo",
+        "static"
+      ],
+      "description": "Hugo static-output starter template for Bzync Cloud.",
+      "path": "frontend/hugo"
+    },
+    {
+      "id": "frontend-jekyll",
+      "displayName": "Jekyll",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "jekyll",
+        "ruby"
+      ],
+      "description": "Jekyll static-output starter template for Bzync Cloud.",
+      "path": "frontend/jekyll"
+    },
+    {
+      "id": "frontend-lit",
+      "displayName": "Lit",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "lit",
+        "node",
+        "vite-lit"
+      ],
+      "description": "Lit static-output starter template for Bzync Cloud.",
+      "path": "frontend/lit"
+    },
+    {
+      "id": "frontend-lit-ts",
+      "displayName": "Lit (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "lit-ts",
+        "node",
+        "vite-lit-ts",
+        "typescript"
+      ],
+      "description": "Lit (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/lit-ts"
+    },
+    {
+      "id": "frontend-mkdocs",
+      "displayName": "MkDocs",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "mkdocs",
+        "static"
+      ],
+      "description": "MkDocs static-output starter template for Bzync Cloud.",
+      "path": "frontend/mkdocs"
+    },
+    {
+      "id": "frontend-plain",
+      "displayName": "Plain",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "plain",
+        "static"
+      ],
+      "description": "Plain static-output starter template for Bzync Cloud.",
+      "path": "frontend/plain"
+    },
+    {
+      "id": "frontend-preact",
+      "displayName": "Preact",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "preact",
+        "vite-preact"
+      ],
+      "description": "Preact static-output starter template for Bzync Cloud.",
+      "path": "frontend/preact"
+    },
+    {
+      "id": "frontend-preact-ts",
+      "displayName": "Preact (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "preact-ts",
+        "vite-preact-ts",
+        "typescript"
+      ],
+      "description": "Preact (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/preact-ts"
+    },
+    {
+      "id": "frontend-qwik",
+      "displayName": "Qwik",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "qwik",
+        "vite-qwik"
+      ],
+      "description": "Qwik static-output starter template for Bzync Cloud.",
+      "path": "frontend/qwik"
+    },
+    {
+      "id": "frontend-qwik-ts",
+      "displayName": "Qwik (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "qwik-ts",
+        "vite-qwik-ts",
+        "typescript"
+      ],
+      "description": "Qwik (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/qwik-ts"
+    },
+    {
+      "id": "frontend-react",
+      "displayName": "React",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "react",
+        "vite-react"
+      ],
+      "description": "React static-output starter template for Bzync Cloud.",
+      "path": "frontend/react"
+    },
+    {
+      "id": "frontend-react-ts",
+      "displayName": "React (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "react-ts",
+        "vite-react-ts",
+        "typescript"
+      ],
+      "description": "React (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/react-ts"
+    },
+    {
+      "id": "frontend-solid",
+      "displayName": "Solid",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "solid",
+        "vite-solid"
+      ],
+      "description": "Solid static-output starter template for Bzync Cloud.",
+      "path": "frontend/solid"
+    },
+    {
+      "id": "frontend-solid-ts",
+      "displayName": "Solid (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "solid-ts",
+        "vite-solid-ts",
+        "typescript"
+      ],
+      "description": "Solid (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/solid-ts"
+    },
+    {
+      "id": "frontend-svelte",
+      "displayName": "Svelte",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "svelte",
+        "vite-svelte"
+      ],
+      "description": "Svelte static-output starter template for Bzync Cloud.",
+      "path": "frontend/svelte"
+    },
+    {
+      "id": "frontend-svelte-ts",
+      "displayName": "Svelte (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "svelte-ts",
+        "vite-svelte-ts",
+        "typescript"
+      ],
+      "description": "Svelte (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/svelte-ts"
+    },
+    {
+      "id": "frontend-vanilla",
+      "displayName": "Vanilla",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "vanilla",
+        "vite-vanilla"
+      ],
+      "description": "Vanilla static-output starter template for Bzync Cloud.",
+      "path": "frontend/vanilla"
+    },
+    {
+      "id": "frontend-vanilla-ts",
+      "displayName": "Vanilla (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "vanilla-ts",
+        "vite-vanilla-ts",
+        "typescript"
+      ],
+      "description": "Vanilla (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/vanilla-ts"
+    },
+    {
+      "id": "frontend-vue",
+      "displayName": "Vue",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "vite-vue",
+        "vue"
+      ],
+      "description": "Vue static-output starter template for Bzync Cloud.",
+      "path": "frontend/vue"
+    },
+    {
+      "id": "frontend-vue-ts",
+      "displayName": "Vue (TypeScript)",
+      "category": "frontend",
+      "subcategory": null,
+      "tags": [
+        "frontend",
+        "node",
+        "vite-vue-ts",
+        "vue-ts",
+        "typescript"
+      ],
+      "description": "Vue (TypeScript) static-output starter template for Bzync Cloud.",
+      "path": "frontend/vue-ts"
+    },
+    {
+      "id": "full-stack-astro-strapi",
+      "displayName": "Astro + Strapi",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "astro-strapi",
+        "full-stack",
+        "node",
+        "strapi"
+      ],
+      "description": "Astro + Strapi multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/astro-strapi"
+    },
+    {
+      "id": "full-stack-django-react",
+      "displayName": "Django + React",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "django",
+        "django-react",
+        "full-stack",
+        "python"
+      ],
+      "description": "Django + React multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/django-react"
+    },
+    {
+      "id": "full-stack-fastapi-react",
+      "displayName": "FastAPI + React",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "fastapi",
+        "fastapi-react",
+        "full-stack",
+        "python"
+      ],
+      "description": "FastAPI + React multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/fastapi-react"
+    },
+    {
+      "id": "full-stack-laravel-inertia-react",
+      "displayName": "Laravel + Inertia (React)",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "full-stack",
+        "laravel",
+        "laravel-inertia-react",
+        "php"
+      ],
+      "description": "Laravel + Inertia (React) multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/laravel-inertia-react"
+    },
+    {
+      "id": "full-stack-laravel-inertia-svelte",
+      "displayName": "Laravel + Inertia (Svelte)",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "full-stack",
+        "laravel",
+        "laravel-inertia-svelte",
+        "php"
+      ],
+      "description": "Laravel + Inertia (Svelte) multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/laravel-inertia-svelte"
+    },
+    {
+      "id": "full-stack-laravel-inertia-vue",
+      "displayName": "Laravel + Inertia (Vue)",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "full-stack",
+        "laravel",
+        "laravel-inertia-vue",
+        "php"
+      ],
+      "description": "Laravel + Inertia (Vue) multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/laravel-inertia-vue"
+    },
+    {
+      "id": "full-stack-nextjs-fastapi",
+      "displayName": "Next.js + FastAPI",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "fastapi",
+        "full-stack",
+        "nextjs-fastapi",
+        "python"
+      ],
+      "description": "Next.js + FastAPI multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/nextjs-fastapi"
+    },
+    {
+      "id": "full-stack-nextjs-go",
+      "displayName": "Next.js + Go",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "full-stack",
+        "go",
+        "nextjs",
+        "nextjs-go"
+      ],
+      "description": "Next.js + Go multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/nextjs-go"
+    },
+    {
+      "id": "full-stack-nextjs-laravel",
+      "displayName": "Next.js + Laravel",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "full-stack",
+        "laravel",
+        "nextjs-laravel",
+        "php"
+      ],
+      "description": "Next.js + Laravel multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/nextjs-laravel"
+    },
+    {
+      "id": "full-stack-rails-react",
+      "displayName": "Rails + React",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "full-stack",
+        "rails",
+        "rails-react",
+        "ruby"
+      ],
+      "description": "Rails + React multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/rails-react"
+    },
+    {
+      "id": "full-stack-sveltekit-fastapi",
+      "displayName": "SvelteKit + FastAPI",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "fastapi",
+        "full-stack",
+        "python",
+        "sveltekit-fastapi"
+      ],
+      "description": "SvelteKit + FastAPI multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/sveltekit-fastapi"
+    },
+    {
+      "id": "full-stack-vite-react-fastapi",
+      "displayName": "React (Vite) + FastAPI",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "fastapi",
+        "full-stack",
+        "python",
+        "vite-react-fastapi"
+      ],
+      "description": "React (Vite) + FastAPI multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/vite-react-fastapi"
+    },
+    {
+      "id": "full-stack-vite-react-laravel",
+      "displayName": "React (Vite) + Laravel",
+      "category": "full-stack",
+      "subcategory": null,
+      "tags": [
+        "full-stack",
+        "laravel",
+        "php",
+        "vite-react-laravel"
+      ],
+      "description": "React (Vite) + Laravel multi-service starter template for Bzync Cloud.",
+      "path": "full-stack/vite-react-laravel"
+    },
+    {
+      "id": "languages-bun-elysia",
+      "displayName": "Elysia",
+      "category": "languages",
+      "subcategory": "bun",
+      "tags": [
+        "bun",
+        "elysia",
+        "languages"
+      ],
+      "description": "Elysia starter template for Bzync Cloud.",
+      "path": "languages/bun/elysia"
+    },
+    {
+      "id": "languages-bun-hono",
+      "displayName": "Hono",
+      "category": "languages",
+      "subcategory": "bun",
+      "tags": [
+        "bun",
+        "hono",
+        "languages"
+      ],
+      "description": "Hono starter template for Bzync Cloud.",
+      "path": "languages/bun/hono"
+    },
+    {
+      "id": "languages-deno-fresh",
+      "displayName": "Fresh",
+      "category": "languages",
+      "subcategory": "deno",
+      "tags": [
+        "deno",
+        "fresh",
+        "languages"
+      ],
+      "description": "Fresh starter template for Bzync Cloud.",
+      "path": "languages/deno/fresh"
+    },
+    {
+      "id": "languages-deno-hono",
+      "displayName": "Hono",
+      "category": "languages",
+      "subcategory": "deno",
+      "tags": [
+        "deno",
+        "hono",
+        "languages"
+      ],
+      "description": "Hono starter template for Bzync Cloud.",
+      "path": "languages/deno/hono"
+    },
+    {
+      "id": "languages-dotnet-aspnetcore",
+      "displayName": "ASP.NET Core",
+      "category": "languages",
+      "subcategory": "dotnet",
+      "tags": [
+        "aspnetcore",
+        "dotnet",
+        "languages"
+      ],
+      "description": "ASP.NET Core starter template for Bzync Cloud.",
+      "path": "languages/dotnet/aspnetcore"
+    },
+    {
+      "id": "languages-dotnet-mvc",
+      "displayName": "ASP.NET MVC",
+      "category": "languages",
+      "subcategory": "dotnet",
+      "tags": [
+        "dotnet",
+        "languages",
+        "mvc"
+      ],
+      "description": "ASP.NET MVC starter template for Bzync Cloud.",
+      "path": "languages/dotnet/mvc"
+    },
+    {
+      "id": "languages-go-chi",
+      "displayName": "Chi",
+      "category": "languages",
+      "subcategory": "go",
+      "tags": [
+        "chi",
+        "go",
+        "languages"
+      ],
+      "description": "Chi starter template for Bzync Cloud.",
+      "path": "languages/go/chi"
+    },
+    {
+      "id": "languages-go-echo",
+      "displayName": "Echo",
+      "category": "languages",
+      "subcategory": "go",
+      "tags": [
+        "echo",
+        "go",
+        "languages"
+      ],
+      "description": "Echo starter template for Bzync Cloud.",
+      "path": "languages/go/echo"
+    },
+    {
+      "id": "languages-go-fiber",
+      "displayName": "Fiber",
+      "category": "languages",
+      "subcategory": "go",
+      "tags": [
+        "fiber",
+        "go",
+        "languages"
+      ],
+      "description": "Fiber starter template for Bzync Cloud.",
+      "path": "languages/go/fiber"
+    },
+    {
+      "id": "languages-go-gin",
+      "displayName": "Gin",
+      "category": "languages",
+      "subcategory": "go",
+      "tags": [
+        "gin",
+        "go",
+        "languages"
+      ],
+      "description": "Gin starter template for Bzync Cloud.",
+      "path": "languages/go/gin"
+    },
+    {
+      "id": "languages-go-plain",
+      "displayName": "Plain",
+      "category": "languages",
+      "subcategory": "go",
+      "tags": [
+        "go",
+        "languages",
+        "plain"
+      ],
+      "description": "Plain starter template for Bzync Cloud.",
+      "path": "languages/go/plain"
+    },
+    {
+      "id": "languages-java-spring-boot",
+      "displayName": "Spring Boot",
+      "category": "languages",
+      "subcategory": "java",
+      "tags": [
+        "java",
+        "languages",
+        "spring-boot"
+      ],
+      "description": "Spring Boot starter template for Bzync Cloud.",
+      "path": "languages/java/spring-boot"
+    },
+    {
+      "id": "languages-kotlin-ktor",
+      "displayName": "Ktor",
+      "category": "languages",
+      "subcategory": "kotlin",
+      "tags": [
+        "kotlin",
+        "ktor",
+        "languages"
+      ],
+      "description": "Ktor starter template for Bzync Cloud.",
+      "path": "languages/kotlin/ktor"
+    },
+    {
+      "id": "languages-node-adonisjs",
+      "displayName": "AdonisJS",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "adonisjs",
+        "languages",
+        "node"
+      ],
+      "description": "AdonisJS starter template for Bzync Cloud.",
+      "path": "languages/node/adonisjs"
+    },
+    {
+      "id": "languages-node-bullmq-worker",
+      "displayName": "BullMQ Worker",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "bullmq-worker",
+        "languages",
+        "node"
+      ],
+      "description": "BullMQ Worker starter template for Bzync Cloud.",
+      "path": "languages/node/bullmq-worker"
+    },
+    {
+      "id": "languages-node-express",
+      "displayName": "Express",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "express",
+        "languages",
+        "node"
+      ],
+      "description": "Express starter template for Bzync Cloud.",
+      "path": "languages/node/express"
+    },
+    {
+      "id": "languages-node-fastify",
+      "displayName": "Fastify",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "fastify",
+        "languages",
+        "node"
+      ],
+      "description": "Fastify starter template for Bzync Cloud.",
+      "path": "languages/node/fastify"
+    },
+    {
+      "id": "languages-node-gatsby",
+      "displayName": "Gatsby",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "gatsby",
+        "languages",
+        "node"
+      ],
+      "description": "Gatsby starter template for Bzync Cloud.",
+      "path": "languages/node/gatsby"
+    },
+    {
+      "id": "languages-node-hono",
+      "displayName": "Hono",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "hono",
+        "languages",
+        "node"
+      ],
+      "description": "Hono starter template for Bzync Cloud.",
+      "path": "languages/node/hono"
+    },
+    {
+      "id": "languages-node-koa",
+      "displayName": "Koa",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "koa",
+        "languages",
+        "node"
+      ],
+      "description": "Koa starter template for Bzync Cloud.",
+      "path": "languages/node/koa"
+    },
+    {
+      "id": "languages-node-medusajs",
+      "displayName": "Medusa",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "languages",
+        "medusajs",
+        "node"
+      ],
+      "description": "Medusa starter template for Bzync Cloud.",
+      "path": "languages/node/medusajs"
+    },
+    {
+      "id": "languages-node-nestjs",
+      "displayName": "NestJS",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "languages",
+        "nestjs",
+        "node"
+      ],
+      "description": "NestJS starter template for Bzync Cloud.",
+      "path": "languages/node/nestjs"
+    },
+    {
+      "id": "languages-node-nextjs",
+      "displayName": "Next.js",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "languages",
+        "nextjs",
+        "node"
+      ],
+      "description": "Next.js starter template for Bzync Cloud.",
+      "path": "languages/node/nextjs"
+    },
+    {
+      "id": "languages-node-nuxt",
+      "displayName": "Nuxt",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "languages",
+        "node",
+        "nuxt"
+      ],
+      "description": "Nuxt starter template for Bzync Cloud.",
+      "path": "languages/node/nuxt"
+    },
+    {
+      "id": "languages-node-plain",
+      "displayName": "Plain",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "languages",
+        "node",
+        "plain"
+      ],
+      "description": "Plain starter template for Bzync Cloud.",
+      "path": "languages/node/plain"
+    },
+    {
+      "id": "languages-node-remix",
+      "displayName": "Remix",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "languages",
+        "node",
+        "remix"
+      ],
+      "description": "Remix starter template for Bzync Cloud.",
+      "path": "languages/node/remix"
+    },
+    {
+      "id": "languages-node-sveltekit",
+      "displayName": "SvelteKit",
+      "category": "languages",
+      "subcategory": "node",
+      "tags": [
+        "languages",
+        "node",
+        "sveltekit"
+      ],
+      "description": "SvelteKit starter template for Bzync Cloud.",
+      "path": "languages/node/sveltekit"
+    },
+    {
+      "id": "languages-php-cakephp",
+      "displayName": "CakePHP",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "cakephp",
+        "languages",
+        "php"
+      ],
+      "description": "CakePHP starter template for Bzync Cloud.",
+      "path": "languages/php/cakephp"
+    },
+    {
+      "id": "languages-php-codeigniter",
+      "displayName": "CodeIgniter",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "codeigniter",
+        "languages",
+        "php"
+      ],
+      "description": "CodeIgniter starter template for Bzync Cloud.",
+      "path": "languages/php/codeigniter"
+    },
+    {
+      "id": "languages-php-flight",
+      "displayName": "Flight",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "flight",
+        "languages",
+        "php"
+      ],
+      "description": "Flight starter template for Bzync Cloud.",
+      "path": "languages/php/flight"
+    },
+    {
+      "id": "languages-php-laminas",
+      "displayName": "Laminas",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "laminas",
+        "languages",
+        "php"
+      ],
+      "description": "Laminas starter template for Bzync Cloud.",
+      "path": "languages/php/laminas"
+    },
+    {
+      "id": "languages-php-laravel",
+      "displayName": "Laravel",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "languages",
+        "laravel",
+        "php"
+      ],
+      "description": "Laravel starter template for Bzync Cloud.",
+      "path": "languages/php/laravel"
+    },
+    {
+      "id": "languages-php-lumen",
+      "displayName": "Lumen",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "languages",
+        "lumen",
+        "php"
+      ],
+      "description": "Lumen starter template for Bzync Cloud.",
+      "path": "languages/php/lumen"
+    },
+    {
+      "id": "languages-php-mezzio",
+      "displayName": "Mezzio",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "languages",
+        "mezzio",
+        "php"
+      ],
+      "description": "Mezzio starter template for Bzync Cloud.",
+      "path": "languages/php/mezzio"
+    },
+    {
+      "id": "languages-php-plain",
+      "displayName": "Plain",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "languages",
+        "php",
+        "plain"
+      ],
+      "description": "Plain starter template for Bzync Cloud.",
+      "path": "languages/php/plain"
+    },
+    {
+      "id": "languages-php-slim",
+      "displayName": "Slim",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "languages",
+        "php",
+        "slim"
+      ],
+      "description": "Slim starter template for Bzync Cloud.",
+      "path": "languages/php/slim"
+    },
+    {
+      "id": "languages-php-symfony",
+      "displayName": "Symfony",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "languages",
+        "php",
+        "symfony"
+      ],
+      "description": "Symfony starter template for Bzync Cloud.",
+      "path": "languages/php/symfony"
+    },
+    {
+      "id": "languages-php-yii",
+      "displayName": "Yii",
+      "category": "languages",
+      "subcategory": "php",
+      "tags": [
+        "languages",
+        "php",
+        "yii"
+      ],
+      "description": "Yii starter template for Bzync Cloud.",
+      "path": "languages/php/yii"
+    },
+    {
+      "id": "languages-python-celery-worker",
+      "displayName": "Celery Worker",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "celery-worker",
+        "languages",
+        "python"
+      ],
+      "description": "Celery Worker starter template for Bzync Cloud.",
+      "path": "languages/python/celery-worker"
+    },
+    {
+      "id": "languages-python-django",
+      "displayName": "Django",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "django",
+        "languages",
+        "python"
+      ],
+      "description": "Django starter template for Bzync Cloud.",
+      "path": "languages/python/django"
+    },
+    {
+      "id": "languages-python-fastapi",
+      "displayName": "FastAPI",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "fastapi",
+        "languages",
+        "python"
+      ],
+      "description": "FastAPI starter template for Bzync Cloud.",
+      "path": "languages/python/fastapi"
+    },
+    {
+      "id": "languages-python-flask",
+      "displayName": "Flask",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "flask",
+        "languages",
+        "python"
+      ],
+      "description": "Flask starter template for Bzync Cloud.",
+      "path": "languages/python/flask"
+    },
+    {
+      "id": "languages-python-gradio",
+      "displayName": "Gradio",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "gradio",
+        "languages",
+        "python"
+      ],
+      "description": "Gradio starter template for Bzync Cloud.",
+      "path": "languages/python/gradio"
+    },
+    {
+      "id": "languages-python-litestar",
+      "displayName": "Litestar",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "languages",
+        "litestar",
+        "python"
+      ],
+      "description": "Litestar starter template for Bzync Cloud.",
+      "path": "languages/python/litestar"
+    },
+    {
+      "id": "languages-python-odoo",
+      "displayName": "Odoo",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "languages",
+        "odoo",
+        "python"
+      ],
+      "description": "Odoo starter template for Bzync Cloud.",
+      "path": "languages/python/odoo"
+    },
+    {
+      "id": "languages-python-plain",
+      "displayName": "Plain",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "languages",
+        "plain",
+        "python"
+      ],
+      "description": "Plain starter template for Bzync Cloud.",
+      "path": "languages/python/plain"
+    },
+    {
+      "id": "languages-python-reflex",
+      "displayName": "Reflex",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "languages",
+        "python",
+        "reflex"
+      ],
+      "description": "Reflex starter template for Bzync Cloud.",
+      "path": "languages/python/reflex"
+    },
+    {
+      "id": "languages-python-sanic",
+      "displayName": "Sanic",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "languages",
+        "python",
+        "sanic"
+      ],
+      "description": "Sanic starter template for Bzync Cloud.",
+      "path": "languages/python/sanic"
+    },
+    {
+      "id": "languages-python-streamlit",
+      "displayName": "Streamlit",
+      "category": "languages",
+      "subcategory": "python",
+      "tags": [
+        "languages",
+        "python",
+        "streamlit"
+      ],
+      "description": "Streamlit starter template for Bzync Cloud.",
+      "path": "languages/python/streamlit"
+    },
+    {
+      "id": "languages-ruby-plain",
+      "displayName": "Plain",
+      "category": "languages",
+      "subcategory": "ruby",
+      "tags": [
+        "languages",
+        "plain",
+        "ruby"
+      ],
+      "description": "Plain starter template for Bzync Cloud.",
+      "path": "languages/ruby/plain"
+    },
+    {
+      "id": "languages-ruby-rails",
+      "displayName": "Rails",
+      "category": "languages",
+      "subcategory": "ruby",
+      "tags": [
+        "languages",
+        "rails",
+        "ruby"
+      ],
+      "description": "Rails starter template for Bzync Cloud.",
+      "path": "languages/ruby/rails"
+    },
+    {
+      "id": "languages-ruby-sinatra",
+      "displayName": "Sinatra",
+      "category": "languages",
+      "subcategory": "ruby",
+      "tags": [
+        "languages",
+        "ruby",
+        "sinatra"
+      ],
+      "description": "Sinatra starter template for Bzync Cloud.",
+      "path": "languages/ruby/sinatra"
+    },
+    {
+      "id": "languages-rust-actix-web",
+      "displayName": "Actix Web",
+      "category": "languages",
+      "subcategory": "rust",
+      "tags": [
+        "actix-web",
+        "languages",
+        "rust"
+      ],
+      "description": "Actix Web starter template for Bzync Cloud.",
+      "path": "languages/rust/actix-web"
+    },
+    {
+      "id": "languages-rust-axum",
+      "displayName": "Axum",
+      "category": "languages",
+      "subcategory": "rust",
+      "tags": [
+        "axum",
+        "languages",
+        "rust"
+      ],
+      "description": "Axum starter template for Bzync Cloud.",
+      "path": "languages/rust/axum"
+    },
+    {
+      "id": "self-hosted-automation-n8n",
+      "displayName": "n8n",
+      "category": "self-hosted",
+      "subcategory": "automation",
+      "tags": [
+        "automation",
+        "n8n",
+        "node",
+        "self-hosted"
+      ],
+      "description": "n8n self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/automation/n8n"
+    },
+    {
+      "id": "self-hosted-automation-openclaw",
+      "displayName": "OpenClaw",
+      "category": "self-hosted",
+      "subcategory": "automation",
+      "tags": [
+        "automation",
+        "node",
+        "openclaw",
+        "self-hosted"
+      ],
+      "description": "OpenClaw self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/automation/openclaw"
+    },
+    {
+      "id": "self-hosted-cms-directus",
+      "displayName": "Directus",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "directus",
+        "node",
+        "self-hosted"
+      ],
+      "description": "Directus self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/directus"
+    },
+    {
+      "id": "self-hosted-cms-drupal",
+      "displayName": "Drupal",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "drupal",
+        "php",
+        "self-hosted"
+      ],
+      "description": "Drupal self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/drupal"
+    },
+    {
+      "id": "self-hosted-cms-joomla",
+      "displayName": "Joomla",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "joomla",
+        "php",
+        "self-hosted"
+      ],
+      "description": "Joomla self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/joomla"
+    },
+    {
+      "id": "self-hosted-cms-keystone",
+      "displayName": "Keystone",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "keystone",
+        "node",
+        "self-hosted"
+      ],
+      "description": "Keystone self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/keystone"
+    },
+    {
+      "id": "self-hosted-cms-october-cms",
+      "displayName": "OctoberCMS",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "october-cms",
+        "php",
+        "self-hosted"
+      ],
+      "description": "OctoberCMS self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/october-cms"
+    },
+    {
+      "id": "self-hosted-cms-statamic",
+      "displayName": "Statamic",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "php",
+        "self-hosted",
+        "statamic"
+      ],
+      "description": "Statamic self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/statamic"
+    },
+    {
+      "id": "self-hosted-cms-strapi",
+      "displayName": "Strapi",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "node",
+        "self-hosted",
+        "strapi"
+      ],
+      "description": "Strapi self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/strapi"
+    },
+    {
+      "id": "self-hosted-cms-wordpress",
+      "displayName": "WordPress",
+      "category": "self-hosted",
+      "subcategory": "cms",
+      "tags": [
+        "cms",
+        "php",
+        "self-hosted",
+        "wordpress"
+      ],
+      "description": "WordPress self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/cms/wordpress"
+    },
+    {
+      "id": "self-hosted-db-admin-adminer",
+      "displayName": "Adminer",
+      "category": "self-hosted",
+      "subcategory": "db-admin",
+      "tags": [
+        "adminer",
+        "db-admin",
+        "self-hosted"
+      ],
+      "description": "Adminer self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/db-admin/adminer"
+    },
+    {
+      "id": "self-hosted-db-admin-mongo-express",
+      "displayName": "Mongo Express",
+      "category": "self-hosted",
+      "subcategory": "db-admin",
+      "tags": [
+        "db-admin",
+        "mongo-express",
+        "self-hosted"
+      ],
+      "description": "Mongo Express self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/db-admin/mongo-express"
+    },
+    {
+      "id": "self-hosted-db-admin-pgadmin",
+      "displayName": "pgAdmin",
+      "category": "self-hosted",
+      "subcategory": "db-admin",
+      "tags": [
+        "db-admin",
+        "pgadmin",
+        "self-hosted"
+      ],
+      "description": "pgAdmin self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/db-admin/pgadmin"
+    },
+    {
+      "id": "self-hosted-db-admin-phpmyadmin",
+      "displayName": "phpMyAdmin",
+      "category": "self-hosted",
+      "subcategory": "db-admin",
+      "tags": [
+        "db-admin",
+        "phpmyadmin",
+        "self-hosted"
+      ],
+      "description": "phpMyAdmin self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/db-admin/phpmyadmin"
+    },
+    {
+      "id": "self-hosted-ecommerce-magento",
+      "displayName": "Magento",
+      "category": "self-hosted",
+      "subcategory": "ecommerce",
+      "tags": [
+        "ecommerce",
+        "magento",
+        "php",
+        "self-hosted"
+      ],
+      "description": "Magento self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/ecommerce/magento"
+    },
+    {
+      "id": "self-hosted-project-management-focalboard",
+      "displayName": "Focalboard",
+      "category": "self-hosted",
+      "subcategory": "project-management",
+      "tags": [
+        "focalboard",
+        "project-management",
+        "self-hosted"
+      ],
+      "description": "Focalboard self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/project-management/focalboard"
+    },
+    {
+      "id": "self-hosted-project-management-leantime",
+      "displayName": "Leantime",
+      "category": "self-hosted",
+      "subcategory": "project-management",
+      "tags": [
+        "leantime",
+        "project-management",
+        "self-hosted"
+      ],
+      "description": "Leantime self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/project-management/leantime"
+    },
+    {
+      "id": "self-hosted-project-management-plane",
+      "displayName": "Plane",
+      "category": "self-hosted",
+      "subcategory": "project-management",
+      "tags": [
+        "plane",
+        "project-management",
+        "self-hosted"
+      ],
+      "description": "Plane self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/project-management/plane"
+    },
+    {
+      "id": "self-hosted-project-management-vikunja",
+      "displayName": "Vikunja",
+      "category": "self-hosted",
+      "subcategory": "project-management",
+      "tags": [
+        "project-management",
+        "self-hosted",
+        "vikunja"
+      ],
+      "description": "Vikunja self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/project-management/vikunja"
+    },
+    {
+      "id": "self-hosted-version-control-cogs",
+      "displayName": "Gogs",
+      "category": "self-hosted",
+      "subcategory": "version-control",
+      "tags": [
+        "cogs",
+        "self-hosted",
+        "version-control"
+      ],
+      "description": "Gogs self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/version-control/cogs"
+    },
+    {
+      "id": "self-hosted-version-control-forgejo",
+      "displayName": "Forgejo",
+      "category": "self-hosted",
+      "subcategory": "version-control",
+      "tags": [
+        "forgejo",
+        "self-hosted",
+        "version-control"
+      ],
+      "description": "Forgejo self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/version-control/forgejo"
+    },
+    {
+      "id": "self-hosted-version-control-gitea",
+      "displayName": "Gitea",
+      "category": "self-hosted",
+      "subcategory": "version-control",
+      "tags": [
+        "gitea",
+        "self-hosted",
+        "version-control"
+      ],
+      "description": "Gitea self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/version-control/gitea"
+    },
+    {
+      "id": "self-hosted-version-control-gitlab-ce",
+      "displayName": "GitLab CE",
+      "category": "self-hosted",
+      "subcategory": "version-control",
+      "tags": [
+        "gitlab-ce",
+        "self-hosted",
+        "version-control"
+      ],
+      "description": "GitLab CE self-hosted application for Bzync Cloud.",
+      "path": "self-hosted/version-control/gitlab-ce"
+    }
+  ]
+}

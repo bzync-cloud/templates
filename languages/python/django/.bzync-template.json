@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-django",
+  "displayName": "Django",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "django",
+    "languages",
+    "python"
+  ],
+  "description": "Django starter template for Bzync Cloud."
+}

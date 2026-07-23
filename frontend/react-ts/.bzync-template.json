@@ -1,0 +1,14 @@
+{
+  "id": "frontend-react-ts",
+  "displayName": "React (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "react-ts",
+    "vite-react-ts",
+    "typescript"
+  ],
+  "description": "React (TypeScript) static-output starter template for Bzync Cloud."
+}

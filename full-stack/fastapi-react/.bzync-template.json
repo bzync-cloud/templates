@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-fastapi-react",
+  "displayName": "FastAPI + React",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "fastapi",
+    "fastapi-react",
+    "full-stack",
+    "python"
+  ],
+  "description": "FastAPI + React multi-service starter template for Bzync Cloud."
+}

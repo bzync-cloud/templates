@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-relational-mariadb",
+  "displayName": "MariaDB",
+  "category": "data-stores",
+  "subcategory": "relational",
+  "tags": [
+    "data-stores",
+    "mariadb",
+    "relational"
+  ],
+  "description": "MariaDB data store for Bzync Cloud."
+}

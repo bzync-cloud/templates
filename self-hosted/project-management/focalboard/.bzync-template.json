@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-project-management-focalboard",
+  "displayName": "Focalboard",
+  "category": "self-hosted",
+  "subcategory": "project-management",
+  "tags": [
+    "focalboard",
+    "project-management",
+    "self-hosted"
+  ],
+  "description": "Focalboard self-hosted application for Bzync Cloud."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-medusajs",
+  "displayName": "Medusa",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "languages",
+    "medusajs",
+    "node"
+  ],
+  "description": "Medusa starter template for Bzync Cloud."
+}

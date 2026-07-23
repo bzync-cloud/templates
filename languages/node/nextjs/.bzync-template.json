@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-nextjs",
+  "displayName": "Next.js",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "languages",
+    "nextjs",
+    "node"
+  ],
+  "description": "Next.js starter template for Bzync Cloud."
+}

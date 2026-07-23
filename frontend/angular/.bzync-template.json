@@ -1,0 +1,12 @@
+{
+  "id": "frontend-angular",
+  "displayName": "Angular",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "angular",
+    "frontend",
+    "node"
+  ],
+  "description": "Angular static-output starter template for Bzync Cloud."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-symfony",
+  "displayName": "Symfony",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "languages",
+    "php",
+    "symfony"
+  ],
+  "description": "Symfony starter template for Bzync Cloud."
+}

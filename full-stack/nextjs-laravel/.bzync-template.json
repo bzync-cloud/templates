@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-nextjs-laravel",
+  "displayName": "Next.js + Laravel",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "full-stack",
+    "laravel",
+    "nextjs-laravel",
+    "php"
+  ],
+  "description": "Next.js + Laravel multi-service starter template for Bzync Cloud."
+}

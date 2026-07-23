@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-version-control-gitea",
+  "displayName": "Gitea",
+  "category": "self-hosted",
+  "subcategory": "version-control",
+  "tags": [
+    "gitea",
+    "self-hosted",
+    "version-control"
+  ],
+  "description": "Gitea self-hosted application for Bzync Cloud."
+}

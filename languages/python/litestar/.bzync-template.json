@@ -1,0 +1,12 @@
+{
+  "id": "languages-python-litestar",
+  "displayName": "Litestar",
+  "category": "languages",
+  "subcategory": "python",
+  "tags": [
+    "languages",
+    "litestar",
+    "python"
+  ],
+  "description": "Litestar starter template for Bzync Cloud."
+}

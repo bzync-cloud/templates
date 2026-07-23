@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-adonisjs",
+  "displayName": "AdonisJS",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "adonisjs",
+    "languages",
+    "node"
+  ],
+  "description": "AdonisJS starter template for Bzync Cloud."
+}

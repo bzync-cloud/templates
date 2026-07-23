@@ -1,0 +1,12 @@
+{
+  "id": "background-jobs-worker-go",
+  "displayName": "Go Worker",
+  "category": "background-jobs",
+  "subcategory": "worker",
+  "tags": [
+    "background-jobs",
+    "go",
+    "worker"
+  ],
+  "description": "Go Worker background job template for Bzync Cloud."
+}

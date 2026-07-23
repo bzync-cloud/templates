@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-project-management-plane",
+  "displayName": "Plane",
+  "category": "self-hosted",
+  "subcategory": "project-management",
+  "tags": [
+    "plane",
+    "project-management",
+    "self-hosted"
+  ],
+  "description": "Plane self-hosted application for Bzync Cloud."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "frontend-astro",
+  "displayName": "Astro",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "astro",
+    "frontend",
+    "node"
+  ],
+  "description": "Astro static-output starter template for Bzync Cloud."
+}

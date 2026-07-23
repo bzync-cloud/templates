@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-plain",
+  "displayName": "Plain",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "languages",
+    "php",
+    "plain"
+  ],
+  "description": "Plain starter template for Bzync Cloud."
+}

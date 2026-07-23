@@ -1,0 +1,12 @@
+{
+  "id": "languages-bun-elysia",
+  "displayName": "Elysia",
+  "category": "languages",
+  "subcategory": "bun",
+  "tags": [
+    "bun",
+    "elysia",
+    "languages"
+  ],
+  "description": "Elysia starter template for Bzync Cloud."
+}

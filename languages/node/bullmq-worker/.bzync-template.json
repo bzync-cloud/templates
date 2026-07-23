@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-bullmq-worker",
+  "displayName": "BullMQ Worker",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "bullmq-worker",
+    "languages",
+    "node"
+  ],
+  "description": "BullMQ Worker starter template for Bzync Cloud."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-statamic",
+  "displayName": "Statamic",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "php",
+    "self-hosted",
+    "statamic"
+  ],
+  "description": "Statamic self-hosted application for Bzync Cloud."
+}

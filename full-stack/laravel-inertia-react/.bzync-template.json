@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-laravel-inertia-react",
+  "displayName": "Laravel + Inertia (React)",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "full-stack",
+    "laravel",
+    "laravel-inertia-react",
+    "php"
+  ],
+  "description": "Laravel + Inertia (React) multi-service starter template for Bzync Cloud."
+}

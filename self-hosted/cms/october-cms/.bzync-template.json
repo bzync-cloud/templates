@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-october-cms",
+  "displayName": "OctoberCMS",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "october-cms",
+    "php",
+    "self-hosted"
+  ],
+  "description": "OctoberCMS self-hosted application for Bzync Cloud."
+}

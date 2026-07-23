@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-project-management-leantime",
+  "displayName": "Leantime",
+  "category": "self-hosted",
+  "subcategory": "project-management",
+  "tags": [
+    "leantime",
+    "project-management",
+    "self-hosted"
+  ],
+  "description": "Leantime self-hosted application for Bzync Cloud."
+}

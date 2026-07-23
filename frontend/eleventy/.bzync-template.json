@@ -1,0 +1,12 @@
+{
+  "id": "frontend-eleventy",
+  "displayName": "Eleventy",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "eleventy",
+    "frontend",
+    "node"
+  ],
+  "description": "Eleventy static-output starter template for Bzync Cloud."
+}

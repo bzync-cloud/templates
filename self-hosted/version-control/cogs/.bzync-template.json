@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-version-control-cogs",
+  "displayName": "Gogs",
+  "category": "self-hosted",
+  "subcategory": "version-control",
+  "tags": [
+    "cogs",
+    "self-hosted",
+    "version-control"
+  ],
+  "description": "Gogs self-hosted application for Bzync Cloud."
+}

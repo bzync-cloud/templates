@@ -1,0 +1,13 @@
+{
+  "id": "frontend-vue",
+  "displayName": "Vue",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "vite-vue",
+    "vue"
+  ],
+  "description": "Vue static-output starter template for Bzync Cloud."
+}

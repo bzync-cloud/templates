@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-vite-react-fastapi",
+  "displayName": "React (Vite) + FastAPI",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "fastapi",
+    "full-stack",
+    "python",
+    "vite-react-fastapi"
+  ],
+  "description": "React (Vite) + FastAPI multi-service starter template for Bzync Cloud."
+}

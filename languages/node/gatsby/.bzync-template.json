@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-gatsby",
+  "displayName": "Gatsby",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "gatsby",
+    "languages",
+    "node"
+  ],
+  "description": "Gatsby starter template for Bzync Cloud."
+}

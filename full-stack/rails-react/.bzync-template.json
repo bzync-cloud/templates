@@ -1,0 +1,13 @@
+{
+  "id": "full-stack-rails-react",
+  "displayName": "Rails + React",
+  "category": "full-stack",
+  "subcategory": null,
+  "tags": [
+    "full-stack",
+    "rails",
+    "rails-react",
+    "ruby"
+  ],
+  "description": "Rails + React multi-service starter template for Bzync Cloud."
+}

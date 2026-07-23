@@ -1,0 +1,12 @@
+{
+  "id": "languages-deno-fresh",
+  "displayName": "Fresh",
+  "category": "languages",
+  "subcategory": "deno",
+  "tags": [
+    "deno",
+    "fresh",
+    "languages"
+  ],
+  "description": "Fresh starter template for Bzync Cloud."
+}

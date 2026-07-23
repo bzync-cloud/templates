@@ -1,0 +1,13 @@
+{
+  "id": "frontend-vanilla",
+  "displayName": "Vanilla",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "vanilla",
+    "vite-vanilla"
+  ],
+  "description": "Vanilla static-output starter template for Bzync Cloud."
+}

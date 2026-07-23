@@ -1,0 +1,12 @@
+{
+  "id": "frontend-hugo",
+  "displayName": "Hugo",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "hugo",
+    "static"
+  ],
+  "description": "Hugo static-output starter template for Bzync Cloud."
+}

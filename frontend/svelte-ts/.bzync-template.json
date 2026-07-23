@@ -1,0 +1,14 @@
+{
+  "id": "frontend-svelte-ts",
+  "displayName": "Svelte (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "svelte-ts",
+    "vite-svelte-ts",
+    "typescript"
+  ],
+  "description": "Svelte (TypeScript) static-output starter template for Bzync Cloud."
+}

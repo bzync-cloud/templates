@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-fastify",
+  "displayName": "Fastify",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "fastify",
+    "languages",
+    "node"
+  ],
+  "description": "Fastify starter template for Bzync Cloud."
+}

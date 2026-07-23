@@ -1,0 +1,12 @@
+{
+  "id": "background-jobs-worker-bun",
+  "displayName": "Bun Worker",
+  "category": "background-jobs",
+  "subcategory": "worker",
+  "tags": [
+    "background-jobs",
+    "bun",
+    "worker"
+  ],
+  "description": "Bun Worker background job template for Bzync Cloud."
+}

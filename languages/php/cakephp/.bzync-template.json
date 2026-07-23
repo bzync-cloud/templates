@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-cakephp",
+  "displayName": "CakePHP",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "cakephp",
+    "languages",
+    "php"
+  ],
+  "description": "CakePHP starter template for Bzync Cloud."
+}

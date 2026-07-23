@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-keystone",
+  "displayName": "Keystone",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "keystone",
+    "node",
+    "self-hosted"
+  ],
+  "description": "Keystone self-hosted application for Bzync Cloud."
+}

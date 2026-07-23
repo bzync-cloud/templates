@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-express",
+  "displayName": "Express",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "express",
+    "languages",
+    "node"
+  ],
+  "description": "Express starter template for Bzync Cloud."
+}

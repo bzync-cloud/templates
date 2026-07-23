@@ -1,0 +1,14 @@
+{
+  "id": "frontend-vanilla-ts",
+  "displayName": "Vanilla (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "vanilla-ts",
+    "vite-vanilla-ts",
+    "typescript"
+  ],
+  "description": "Vanilla (TypeScript) static-output starter template for Bzync Cloud."
+}

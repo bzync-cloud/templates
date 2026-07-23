@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-cache-redis",
+  "displayName": "Redis",
+  "category": "data-stores",
+  "subcategory": "cache",
+  "tags": [
+    "cache",
+    "data-stores",
+    "redis"
+  ],
+  "description": "Redis data store for Bzync Cloud."
+}

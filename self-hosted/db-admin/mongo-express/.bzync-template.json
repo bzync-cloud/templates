@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-db-admin-mongo-express",
+  "displayName": "Mongo Express",
+  "category": "self-hosted",
+  "subcategory": "db-admin",
+  "tags": [
+    "db-admin",
+    "mongo-express",
+    "self-hosted"
+  ],
+  "description": "Mongo Express self-hosted application for Bzync Cloud."
+}

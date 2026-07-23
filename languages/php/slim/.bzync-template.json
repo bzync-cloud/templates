@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-slim",
+  "displayName": "Slim",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "languages",
+    "php",
+    "slim"
+  ],
+  "description": "Slim starter template for Bzync Cloud."
+}

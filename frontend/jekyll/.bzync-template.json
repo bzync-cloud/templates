@@ -1,0 +1,12 @@
+{
+  "id": "frontend-jekyll",
+  "displayName": "Jekyll",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "jekyll",
+    "ruby"
+  ],
+  "description": "Jekyll static-output starter template for Bzync Cloud."
+}

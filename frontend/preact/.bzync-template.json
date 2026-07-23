@@ -1,0 +1,13 @@
+{
+  "id": "frontend-preact",
+  "displayName": "Preact",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "preact",
+    "vite-preact"
+  ],
+  "description": "Preact static-output starter template for Bzync Cloud."
+}

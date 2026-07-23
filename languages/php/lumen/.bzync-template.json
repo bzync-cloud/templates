@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-lumen",
+  "displayName": "Lumen",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "languages",
+    "lumen",
+    "php"
+  ],
+  "description": "Lumen starter template for Bzync Cloud."
+}

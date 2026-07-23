@@ -1,0 +1,12 @@
+{
+  "id": "languages-node-nuxt",
+  "displayName": "Nuxt",
+  "category": "languages",
+  "subcategory": "node",
+  "tags": [
+    "languages",
+    "node",
+    "nuxt"
+  ],
+  "description": "Nuxt starter template for Bzync Cloud."
+}

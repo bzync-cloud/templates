@@ -1,0 +1,12 @@
+{
+  "id": "languages-ruby-plain",
+  "displayName": "Plain",
+  "category": "languages",
+  "subcategory": "ruby",
+  "tags": [
+    "languages",
+    "plain",
+    "ruby"
+  ],
+  "description": "Plain starter template for Bzync Cloud."
+}

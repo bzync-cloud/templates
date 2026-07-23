@@ -1,0 +1,12 @@
+{
+  "id": "languages-php-mezzio",
+  "displayName": "Mezzio",
+  "category": "languages",
+  "subcategory": "php",
+  "tags": [
+    "languages",
+    "mezzio",
+    "php"
+  ],
+  "description": "Mezzio starter template for Bzync Cloud."
+}

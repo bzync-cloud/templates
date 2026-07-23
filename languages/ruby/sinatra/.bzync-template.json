@@ -1,0 +1,12 @@
+{
+  "id": "languages-ruby-sinatra",
+  "displayName": "Sinatra",
+  "category": "languages",
+  "subcategory": "ruby",
+  "tags": [
+    "languages",
+    "ruby",
+    "sinatra"
+  ],
+  "description": "Sinatra starter template for Bzync Cloud."
+}

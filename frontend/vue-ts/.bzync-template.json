@@ -1,0 +1,14 @@
+{
+  "id": "frontend-vue-ts",
+  "displayName": "Vue (TypeScript)",
+  "category": "frontend",
+  "subcategory": null,
+  "tags": [
+    "frontend",
+    "node",
+    "vite-vue-ts",
+    "vue-ts",
+    "typescript"
+  ],
+  "description": "Vue (TypeScript) static-output starter template for Bzync Cloud."
+}

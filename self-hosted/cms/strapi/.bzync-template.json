@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-strapi",
+  "displayName": "Strapi",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "node",
+    "self-hosted",
+    "strapi"
+  ],
+  "description": "Strapi self-hosted application for Bzync Cloud."
+}

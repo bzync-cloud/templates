@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-automation-openclaw",
+  "displayName": "OpenClaw",
+  "category": "self-hosted",
+  "subcategory": "automation",
+  "tags": [
+    "automation",
+    "node",
+    "openclaw",
+    "self-hosted"
+  ],
+  "description": "OpenClaw self-hosted application for Bzync Cloud."
+}

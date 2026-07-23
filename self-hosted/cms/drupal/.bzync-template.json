@@ -1,0 +1,13 @@
+{
+  "id": "self-hosted-cms-drupal",
+  "displayName": "Drupal",
+  "category": "self-hosted",
+  "subcategory": "cms",
+  "tags": [
+    "cms",
+    "drupal",
+    "php",
+    "self-hosted"
+  ],
+  "description": "Drupal self-hosted application for Bzync Cloud."
+}

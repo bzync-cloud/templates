@@ -1,0 +1,12 @@
+{
+  "id": "languages-go-fiber",
+  "displayName": "Fiber",
+  "category": "languages",
+  "subcategory": "go",
+  "tags": [
+    "fiber",
+    "go",
+    "languages"
+  ],
+  "description": "Fiber starter template for Bzync Cloud."
+}
