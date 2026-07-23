@@ -1,6 +1,6 @@
 # Bzync Cloud Template Catalog — Proposed Architecture
 
-**Status:** Proposal only. No files have been moved. This document is the review and recommendation requested for scaling the catalog from ~129 templates to hundreds/thousands.
+**Status:** Implemented. §4–§7 (the six-category reorg, naming standards, and the `.bzync-template.json`/`catalog.json` metadata layer from §6) are live in this repo — see git history starting at the "Reorganize template catalog into six top-level categories" commit. §8 (new templates for empty categories) is intentionally not implemented — those are recommendations for future contributions, not scaffolded placeholders beyond the empty category folders + `README.md` stubs. §9's migration plan describes the order this was actually done in, collapsed into fewer commits than originally phased.
 
 ---
 
