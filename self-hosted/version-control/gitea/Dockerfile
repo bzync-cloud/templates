@@ -40,9 +40,11 @@ RUN chmod +x /usr/local/bin/bzync-entrypoint.sh /usr/local/bin/bzync-create-admi
 # redeploy loses the instance's actual data, not just its config.
 VOLUME ["/data"]
 
-# SSH is intentionally not exposed — see the FROM scratch comment above.
-# Git-over-SSH still runs inside the container but isn't reachable through
-# Bzync Cloud's HTTP(S)-only ingress; use HTTPS remotes instead.
+# SSH is intentionally not EXPOSEd here — see the FROM scratch comment
+# above. That only affects Traefik's HTTP port autodetection, not SSH
+# reachability: the platform's "Enable Git SSH access" project toggle binds
+# a dedicated host port straight to this container's port 22 regardless of
+# what's EXPOSEd. See the README's "About SSH" section.
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \

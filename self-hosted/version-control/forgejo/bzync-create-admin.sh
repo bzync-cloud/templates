@@ -15,7 +15,7 @@ for i in $(seq 1 60); do
 done
 
 for i in $(seq 1 60); do
-  if su git -c "gitea admin user create --username '$GITEA_ADMIN_USERNAME' --password '$GITEA_ADMIN_PASSWORD' --email '${GITEA_ADMIN_EMAIL:-admin@example.com}' --admin --config $CONFIG" >"$LOG" 2>&1; then
+  if su git -c "gitea admin user create --username '$FORGEJO_ADMIN_USERNAME' --password '$FORGEJO_ADMIN_PASSWORD' --email '${FORGEJO_ADMIN_EMAIL:-admin@example.com}' --admin --config $CONFIG" >"$LOG" 2>&1; then
     exit 0
   fi
   grep -qi "already exists" "$LOG" && exit 0

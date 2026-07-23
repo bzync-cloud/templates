@@ -57,15 +57,19 @@ git clone https://your-domain.example.com/owner/repo.git
 `GITEA__service__DISABLE_REGISTRATION=true` by default (production-hardened: no open sign-up),
 so there's no install wizard or sign-up form to create the first user. Instead,
 `bzync-entrypoint.sh` wraps the upstream image's entrypoint and creates the account itself from
-`GITEA_ADMIN_USERNAME` / `GITEA_ADMIN_PASSWORD` / `GITEA_ADMIN_EMAIL` (see `.env.example`) once
-the container has booted — it polls for `app.ini` and retries past the `database is locked`
+`FORGEJO_ADMIN_USERNAME` / `FORGEJO_ADMIN_PASSWORD` / `FORGEJO_ADMIN_EMAIL` (see `.env.example`)
+once the container has booted — it polls for `app.ini` and retries past the `database is locked`
 window that happens mid-migration, so there's nothing to babysit. Leaving
-`GITEA_ADMIN_PASSWORD=changeme` in place gets you a strong generated password the same way
+`FORGEJO_ADMIN_PASSWORD=changeme` in place gets you a strong generated password the same way
 `SECRET_KEY` does; find it in the dashboard's Variables tab after the first deploy. It's safe to
 leave this running on every boot — it no-ops once that username already exists.
 
-To skip this and create the account yourself instead, unset `GITEA_ADMIN_USERNAME` or
-`GITEA_ADMIN_PASSWORD` and run:
+These three are this platform's own bootstrap vars (read by `bzync-create-admin.sh`), not part of
+Forgejo's `GITEA__` config namespace — that's why they don't follow the double-underscore
+convention described above.
+
+To skip this and create the account yourself instead, unset `FORGEJO_ADMIN_USERNAME` or
+`FORGEJO_ADMIN_PASSWORD` and run:
 
 ```bash
 docker exec -u git <container> gitea admin user create \

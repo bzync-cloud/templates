@@ -32,7 +32,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     GITEA__service__REQUIRE_SIGNIN_VIEW=true
 
 # Wraps the upstream entrypoint to auto-create the first admin user from
-# GITEA_ADMIN_* env vars — see bzync-entrypoint.sh and the README.
+# FORGEJO_ADMIN_* env vars — see bzync-entrypoint.sh and the README.
 COPY bzync-entrypoint.sh /usr/local/bin/bzync-entrypoint.sh
 COPY bzync-create-admin.sh /usr/local/bin/bzync-create-admin.sh
 RUN chmod +x /usr/local/bin/bzync-entrypoint.sh /usr/local/bin/bzync-create-admin.sh
@@ -44,9 +44,11 @@ RUN chmod +x /usr/local/bin/bzync-entrypoint.sh /usr/local/bin/bzync-create-admi
 # just its config.
 VOLUME ["/data"]
 
-# SSH is intentionally not exposed — see the FROM scratch comment above.
-# Git-over-SSH still runs inside the container but isn't reachable through
-# Bzync Cloud's HTTP(S)-only ingress; use HTTPS remotes instead.
+# SSH is intentionally not EXPOSEd here — see the FROM scratch comment
+# above. That only affects Traefik's HTTP port autodetection, not SSH
+# reachability: the platform's "Enable Git SSH access" project toggle binds
+# a dedicated host port straight to this container's port 22 regardless of
+# what's EXPOSEd. See the README's "About SSH" section.
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
