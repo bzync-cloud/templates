@@ -41,7 +41,7 @@ env_args() {
 
 extra_env_args() {
   case ${1#"$ROOT"/} in
-    php/laravel|full-stack/laravel-inertia-*)
+    languages/php/laravel|full-stack/laravel-inertia-*)
       printf -- '-e LOG_CHANNEL=stderr -e CACHE_STORE=file -e SESSION_DRIVER=file -e QUEUE_CONNECTION=sync '
       ;;
   esac
@@ -60,7 +60,7 @@ extra_run_args() {
 
 network_args() {
   case ${1#"$ROOT"/} in
-    php/joomla|python/odoo|self-hosted/db-admin/mongo-express|self-hosted/project-management/leantime|self-hosted/project-management/plane)
+    self-hosted/cms/joomla|languages/python/odoo|self-hosted/db-admin/mongo-express|self-hosted/project-management/leantime|self-hosted/project-management/plane)
       printf -- '--network %s ' "$(network_name "$1")"
       ;;
   esac
@@ -83,7 +83,7 @@ start_aux_services() {
   net=$(network_name "$dir")
 
   case $rel in
-    php/joomla)
+    self-hosted/cms/joomla)
       docker network create "$net" >/dev/null
       docker run --rm -d --name "$db" --network "$net" --network-alias db \
         -e MARIADB_DATABASE=joomla \
@@ -92,7 +92,7 @@ start_aux_services() {
         -e MARIADB_ROOT_PASSWORD=joomla \
         mariadb:11 >/dev/null
       ;;
-    python/odoo)
+    languages/python/odoo)
       docker network create "$net" >/dev/null
       docker run --rm -d --name "$db" --network "$net" --network-alias db \
         -e POSTGRES_USER=odoo \
@@ -149,7 +149,7 @@ start_aux_services() {
 
 smoke_paths() {
   case ${1#"$ROOT"/} in
-    php/laravel|full-stack/laravel-inertia-*)
+    languages/php/laravel|full-stack/laravel-inertia-*)
       printf '/ /up'
       ;;
     self-hosted/db-admin/mongo-express)
@@ -279,16 +279,15 @@ if [ -n "$ONLY" ]; then
     failures="$failures ${target#"$ROOT"/}"
   fi
 else
-  # maxdepth 3, not 2: self-hosted/* nests one level deeper than every other
-  # category (e.g. self-hosted/version-control/gitea) — bare category and
-  # subcategory dirs (self-hosted, self-hosted/version-control, ...) are
-  # still safe to walk over: the -f Dockerfile/index.html check below skips
-  # them since none of those intermediate dirs are templates themselves.
-  for dir in $(find "$ROOT" -mindepth 1 -maxdepth 3 -type d | sort); do
-    case ${dir#"$ROOT"/} in
-      .git|scripts|go|full-stack|node|php|python|ruby|database) continue ;;
-      .git/*|scripts/*|database/*) continue ;;
-    esac
+  # Depth-agnostic: every template root has exactly one BZYNC_CLOUD file
+  # (that's what makes it a template), so anchor discovery on that rather
+  # than a maxdepth + per-category exclusion list — it keeps working
+  # through catalog reorganizations without editing this script. Some
+  # frameworks (e.g. Angular) ship their own index.html deeper inside the
+  # tree as source, not a deploy artifact — filtering by Dockerfile/
+  # index.html only within the BZYNC_CLOUD directory itself (not
+  # recursively) avoids picking those up.
+  for dir in $(find "$ROOT" -not -path "$ROOT/.git/*" -name BZYNC_CLOUD -exec dirname {} \; | sort -u); do
     if [ -f "$dir/Dockerfile" ] || [ -f "$dir/index.html" ]; then
       if ! run_template "$dir"; then
         failures="$failures ${dir#"$ROOT"/}"
