@@ -14,65 +14,61 @@ Bzync Cloud reads your project files (`package.json`, `go.mod`, `composer.json`,
 
 ## Templates
 
-### Node.js
+The catalog is organized into six top-level categories — see
+`TEMPLATE-CATALOG-ARCHITECTURE.md` for the full reasoning. Each answers one
+question: is this code you write on a runtime (`languages/`), a client-only
+static-output app (`frontend/`), a pre-wired multi-service starter
+(`full-stack/`), something that runs without serving HTTP
+(`background-jobs/`), a stateful backing service (`data-stores/`), or a
+finished product you deploy as-is (`self-hosted/`).
 
-`node/express` · `node/fastify` · `node/koa` · `node/hono` · `node/nextjs` · `node/nuxt` · `node/sveltekit` · `node/remix` · `node/gatsby` · `node/nestjs` · `node/adonisjs` · `node/strapi` · `node/keystone` · `node/directus` · `node/medusajs` · `node/bullmq-worker` · `node/n8n` · `node/openclaw` · `node/plain`
+### `languages/` — runtimes and their frameworks
 
-### Vite
+`languages/node`: `express` · `fastify` · `koa` · `hono` · `nextjs` · `nuxt` · `sveltekit` · `remix` · `gatsby` · `nestjs` · `adonisjs` · `medusajs` · `bullmq-worker` · `plain`
 
-`vite/react` · `vite/react-ts` · `vite/vue` · `vite/vue-ts` · `vite/svelte` · `vite/svelte-ts` · `vite/preact` · `vite/preact-ts` · `vite/solid` · `vite/solid-ts` · `vite/lit` · `vite/lit-ts` · `vite/vanilla` · `vite/vanilla-ts` · `vite/qwik` · `vite/qwik-ts`
+`languages/python`: `django` · `fastapi` · `flask` · `litestar` · `sanic` · `gradio` · `streamlit` · `reflex` · `odoo` · `celery-worker` · `plain`
 
-### Python
+`languages/php`: `laravel` · `lumen` · `symfony` · `codeigniter` · `cakephp` · `yii` · `slim` · `flight` · `mezzio` · `laminas` · `plain`
 
-`python/django` · `python/fastapi` · `python/flask` · `python/litestar` · `python/sanic` · `python/gradio` · `python/streamlit` · `python/reflex` · `python/odoo` · `python/celery-worker` · `python/plain`
+`languages/ruby`: `rails` · `sinatra` · `plain`
 
-### PHP
+`languages/go`: `gin` · `echo` · `fiber` · `chi` · `plain`
 
-`php/laravel` · `php/lumen` · `php/symfony` · `php/codeigniter` · `php/cakephp` · `php/yii` · `php/slim` · `php/flight` · `php/mezzio` · `php/laminas` · `php/statamic` · `php/october-cms` · `php/wordpress` · `php/drupal` · `php/joomla` · `php/magento` · `php/plain`
+`languages/bun`: `elysia` · `hono`
 
-### Ruby
+`languages/deno`: `fresh` · `hono`
 
-`ruby/rails` · `ruby/sinatra` · `ruby/plain`
+`languages/java`: `spring-boot` — `languages/kotlin`: `ktor`
 
-### Go
+`languages/dotnet`: `aspnetcore` · `mvc`
 
-`go/gin` · `go/echo` · `go/fiber` · `go/chi` · `go/plain`
+`languages/rust`: `actix-web` · `axum`
 
-### Static Sites & Docs
+### `frontend/` — client-rendered, static-output apps
 
-`static/angular` · `static/astro` · `static/eleventy` · `static/hugo` · `static/jekyll` · `static/plain` · `docs/docusaurus` · `docs/mkdocs`
+`react` · `react-ts` · `vue` · `vue-ts` · `svelte` · `svelte-ts` · `preact` · `preact-ts` · `solid` · `solid-ts` · `lit` · `lit-ts` · `vanilla` · `vanilla-ts` · `qwik` · `qwik-ts` · `astro` · `angular` · `eleventy` · `hugo` · `jekyll` · `docusaurus` · `mkdocs` · `plain`
 
-### Bun
+Bundler/generator choice (Vite, Astro, Hugo, Jekyll, Eleventy, Docusaurus, MkDocs...) isn't a separate category — every template here shares one deployment shape: build once, serve static files.
 
-`bun/elysia` · `bun/hono`
+### `full-stack/` — pre-wired multi-service starters
 
-### Deno
+`nextjs-go` · `nextjs-fastapi` · `nextjs-laravel` · `django-react` · `fastapi-react` · `sveltekit-fastapi` · `vite-react-fastapi` · `vite-react-laravel` · `rails-react` · `astro-strapi` · `laravel-inertia-react` · `laravel-inertia-vue` · `laravel-inertia-svelte`
 
-`deno/fresh` · `deno/hono`
+### `background-jobs/` — runs without serving HTTP
 
-### Java / Kotlin
+`background-jobs/worker`: `node` · `bun` · `python` · `ruby` · `go` (long-running/queue-driven)
 
-`java/spring-boot` · `kotlin/ktor`
+`background-jobs/cron`: `node` · `python` · `ruby` · `go` (scheduled)
 
-### .NET
+### `data-stores/` — stateful backing services
 
-`dotnet/aspnetcore` · `dotnet/mvc`
+`data-stores/relational`: `postgres` · `mysql` · `mariadb`
 
-### Rust
+`data-stores/document`: `mongodb` · `couchbase`
 
-`rust/actix-web` · `rust/axum`
+`data-stores/cache`: `redis` · `valkey` · `keydb`
 
-### Workers & Cron Jobs
-
-`worker/node` · `worker/bun` · `worker/python` · `worker/ruby` · `worker/go` · `cron/node` · `cron/python` · `cron/ruby` · `cron/go`
-
-### Full-Stack (multi-service)
-
-`full-stack/nextjs-go` · `full-stack/nextjs-fastapi` · `full-stack/nextjs-laravel` · `full-stack/django-react` · `full-stack/fastapi-react` · `full-stack/sveltekit-fastapi` · `full-stack/vite-react-fastapi` · `full-stack/vite-react-laravel` · `full-stack/rails-react` · `full-stack/astro-strapi` · `full-stack/laravel-inertia-react` · `full-stack/laravel-inertia-vue` · `full-stack/laravel-inertia-svelte`
-
-### Databases
-
-`database/postgres` · `database/mysql` · `database/mariadb` · `database/mongodb` · `database/redis` · `database/couchbase`
+`data-stores/search`, `data-stores/object-storage`, `data-stores/message-queue` — no templates yet, see each folder's `README.md`.
 
 Deployable like any other template — clone, push, and the platform builds the `Dockerfile` as-is.
 Each one matches the exact engine/version Bzync Cloud's production Managed Databases (MDB)
@@ -81,29 +77,29 @@ the workspace root `README.md`), so a deployed instance here is the database, no
 for a linked managed one. See each directory's `README.md` for supported versions, the connection
 variables to set on any other app that needs to reach it, and connection snippets.
 
-### Version Control
+### `self-hosted/` — finished applications, deployed as-is
 
-`self-hosted/version-control/gitea` · `self-hosted/version-control/forgejo` · `self-hosted/version-control/gitlab-ce` · `self-hosted/version-control/cogs` (Gogs)
+**`self-hosted/version-control`**: `gitea` · `forgejo` · `gitlab-ce` · `cogs` (Gogs)
 
-Self-hosted Git servers — deployable like any other template, each ships its own `Dockerfile`.
-Like `database/*` on this tier, there's no managed Bzync equivalent to fall back on: these
-deployments *are* the Git server, and their persistent volume holds real, non-reproducible data
-(repos, issues, users). Each image is rebuilt from the upstream vendor image with the SSH port
-deliberately dropped — Bzync Cloud's ingress and health checks target the lowest-numbered
-`EXPOSE`d port in the image, and these upstream images all bake in port `22` alongside their HTTP
-port, which would otherwise silently steal ingress traffic. Git-over-SSH still runs inside each
-container, just not reachable through the platform's HTTP(S)-only ingress — use HTTPS remotes
-instead. See each directory's `README.md` for first-boot admin account setup, resource
-requirements (GitLab CE in particular needs considerably more than the other three), and
-switching from the zero-config SQLite default to a separately deployed `database/postgres`
-instance.
+Self-hosted Git servers — each ships its own `Dockerfile`. Like `data-stores/*` on this tier,
+there's no managed Bzync equivalent to fall back on: these deployments *are* the Git server, and
+their persistent volume holds real, non-reproducible data (repos, issues, users). Each image is
+rebuilt from the upstream vendor image with the SSH port deliberately dropped — Bzync Cloud's
+ingress and health checks target the lowest-numbered `EXPOSE`d port in the image, and these
+upstream images all bake in port `22` alongside their HTTP port, which would otherwise silently
+steal ingress traffic. Git-over-SSH still runs inside each container, just not reachable through
+the platform's HTTP(S)-only ingress by default — see each directory's `README.md` for first-boot
+admin account setup, resource requirements (GitLab CE in particular needs considerably more than
+the other three), the platform's "Enable Git SSH access" toggle, and switching from the
+zero-config SQLite default to a separately deployed `data-stores/relational/postgres` instance.
 
-### Database Admin
+**`self-hosted/cms`**: `wordpress` · `drupal` · `joomla` · `october-cms` · `statamic` · `strapi` · `directus` · `keystone`
 
-`self-hosted/db-admin/adminer` · `self-hosted/db-admin/phpmyadmin` ·
-`self-hosted/db-admin/mongo-express` · `self-hosted/db-admin/pgadmin`
+**`self-hosted/ecommerce`**: `magento`
 
-GUIs for a database deployed elsewhere on this tier (e.g. from `database/*`) — Adminer and
+**`self-hosted/db-admin`**: `adminer` · `phpmyadmin` · `mongo-express` · `pgadmin`
+
+GUIs for a database deployed elsewhere on this tier (e.g. from `data-stores/*`) — Adminer and
 phpMyAdmin are stateless pass-throughs (no login of their own, no volume; whatever DB credentials
 you type in each visit are the whole auth story). mongo-express and pgAdmin do have their own
 separate login on top of the target database's credentials, and use `DB_*` env vars you set
@@ -111,20 +107,21 @@ yourself to point at that deployment (no automatic linking on this tier) — see
 `README.md` for exactly which vars, and how each one's access should be restricted before it's
 reachable on a public domain.
 
-### Project Management
+**`self-hosted/project-management`**: `vikunja` · `focalboard` · `leantime` · `plane`
 
-`self-hosted/project-management/vikunja` · `self-hosted/project-management/focalboard` ·
-`self-hosted/project-management/leantime` · `self-hosted/project-management/plane`
+Self-hosted task/project trackers. Vikunja and Focalboard default to an embedded SQLite database
+(no separate database needed for solo/small use, with a documented path to a separately deployed
+Postgres/MySQL instance — from `data-stores/*` on this tier — for heavier use); Leantime has no
+SQLite fallback and needs a MySQL/MariaDB database from the start. Plane's all-in-one image is the
+heaviest of the four: it needs Postgres, Redis, an AMQP broker, and S3-compatible object storage
+all running before it starts at all — `data-stores/relational` and `data-stores/cache` cover the
+first two on this tier, but the broker and object storage have no Bzync template equivalent yet
+(see `data-stores/message-queue/README.md` and `data-stores/object-storage/README.md`). See each
+directory's `README.md` for the exact tradeoffs and setup steps.
 
-Self-hosted task/project trackers — deployable like any other template. Vikunja and Focalboard
-default to an embedded SQLite database (no separate database needed for solo/small use, with a
-documented path to a separately deployed Postgres/MySQL instance — from `database/*` on this
-tier — for heavier use); Leantime has no SQLite fallback and needs a MySQL/MariaDB database from
-the start. Plane's all-in-one image is the heaviest of the four: it needs Postgres, Redis, an
-AMQP broker, and S3-compatible object storage all running before it starts at all —
-`database/*` covers the first two on this tier, but the broker and object storage have no Bzync
-template equivalent and need to come from elsewhere. See each directory's `README.md` for the
-exact tradeoffs and setup steps.
+**`self-hosted/automation`**: `n8n` · `openclaw`
+
+**`self-hosted/ai`**, **`self-hosted/monitoring`**, **`self-hosted/identity`**, **`self-hosted/storage`**, **`self-hosted/wiki`**, **`self-hosted/analytics`**, **`self-hosted/mail`**, **`self-hosted/search`** — no templates yet, see each folder's `README.md`.
 
 ---
 
@@ -201,8 +198,7 @@ Any standard project deploys without a template. The platform auto-detects your 
 |---------|-----------|----------------|-----------------|
 | `go` | `gin`, `echo`, `fiber`, `chi`, `plain`, `cron`, `worker` | `major.minor` | `1.22`, `1.23`, `1.24` |
 | `node` | `nextjs`, `nuxt`, `sveltekit`, `remix`, `gatsby`, `nestjs`, `adonisjs`, `strapi`, `keystone`, `directus`, `medusajs`, `docusaurus`, `hono`, `express`, `fastify`, `koa`, `bullmq-worker`, `cron`, `worker`, `plain` | `major` | `18`, `20`, `22` |
-| `vite` | `react`, `react-ts`, `vue`, `vue-ts`, `svelte`, `svelte-ts`, `preact`, `preact-ts`, `solid`, `solid-ts`, `lit`, `lit-ts`, `vanilla`, `vanilla-ts`, `qwik`, `qwik-ts` | `major` | `20`, `22` |
-| `python` | `django`, `fastapi`, `flask`, `litestar`, `sanic`, `gradio`, `streamlit`, `reflex`, `odoo`, `celery-worker`, `mkdocs`, `cron`, `worker`, `plain` | `major.minor` | `3.11`, `3.12`, `3.13` |
+| `python` | `django`, `fastapi`, `flask`, `litestar`, `sanic`, `gradio`, `streamlit`, `reflex`, `odoo`, `celery-worker`, `cron`, `worker`, `plain` | `major.minor` | `3.11`, `3.12`, `3.13` |
 | `ruby` | `rails`, `sinatra`, `cron`, `worker`, `plain` | `major.minor` | `3.2`, `3.3`, `3.4` |
 | `php` | `laravel`, `lumen`, `symfony`, `codeigniter`, `cakephp`, `yii`, `slim`, `flight`, `mezzio`, `laminas`, `statamic`, `october-cms`, `wordpress`, `drupal`, `joomla`, `magento`, `plain` | `major.minor` | `8.2`, `8.3`, `8.4` |
 | `bun` | `elysia`, `hono`, `worker` | `major.minor` | `1.0`, `1.1` |
@@ -211,5 +207,11 @@ Any standard project deploys without a template. The platform auto-detects your 
 | `kotlin` | `ktor` | `major.minor` | `2.0` |
 | `dotnet` | `aspnetcore`, `mvc` | `major.minor` | `8.0`, `9.0` |
 | `rust` | `actix-web`, `axum` | `major.minor` | `1.82` |
-| `static` | `eleventy`, `hugo`, `jekyll`, `angular`, `astro`, `plain` | — | — |
+| `static` | `eleventy`, `hugo`, `jekyll`, `angular`, `astro`, `mkdocs`, `plain` | — | — |
+
+These are `BZYNC_CLOUD` `runtime`/`framework` *values* the platform's build detection
+understands — independent of where a template lives in this repo's directory tree (e.g. every
+`frontend/*` template's `runtime` is `node` or `static` depending on whether it needs a build
+step; every `self-hosted/*` app is `runtime = php` or `runtime = node` like any other template of
+that language, just a finished application instead of a framework starter).
 # templates
