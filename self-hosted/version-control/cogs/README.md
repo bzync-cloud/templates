@@ -32,10 +32,27 @@ The image only exposes port `3000`. Bzync Cloud's ingress and health checks targ
 lowest-numbered `EXPOSE`d port in the built image, and the upstream `gogs/gogs` image bakes in
 port `22` alongside `3000` — if both were exposed, HTTP traffic would get silently routed to the
 SSH port instead of the web server. This Dockerfile rebuilds from `scratch` on top of the
-upstream filesystem specifically to drop that inherited `22` (see the comment in `Dockerfile`).
-Gogs' own built-in SSH server is also disabled (`START_SSH_SERVER=false`, in favor of the real
-OpenSSH daemon the base image already runs) — either way, SSH isn't reachable through Bzync
-Cloud's HTTP(S)-only ingress. Clone over HTTPS instead:
+upstream filesystem specifically to drop that inherited `22` (see the comment in `Dockerfile`),
+which is unrelated to the feature below — dropping the image's own `EXPOSE 22` only affects
+Traefik's port autodetection for HTTP, not whether SSH can be reached. Gogs' own built-in SSH
+server is disabled too (`START_SSH_SERVER=false`, in favor of the real OpenSSH daemon the base
+image already runs) — that daemon is what actually serves SSH below.
+
+Real `git@host:owner/repo.git` clones need the project's **"Enable Git SSH access"** toggle
+(Project → Git SSH in the dashboard — requires a plan with that feature). Enabling it allocates a
+dedicated port and binds it straight to the container's real OpenSSH daemon, bypassing the
+HTTP(S) ingress entirely — it works whether or not this Dockerfile exposes `22`. Once enabled, the
+dashboard shows the exact command:
+
+```bash
+git clone ssh://git@your-app.app.bzync.cloud:20005/owner/repo.git
+```
+
+Also set `GOGS_SSH_PORT` (see `.env.example`) to the same port shown there — without it, Gogs'
+own generated clone URLs (shown in its web UI) still advertise the default port `22`, even though
+the SSH connection itself works on the allocated port. `SSH_DOMAIN` in `app.ini.template` is left
+blank, which Gogs defaults to the same value as `GOGS_DOMAIN`, so no separate var is needed for
+that half. HTTPS clone always works regardless, with or without this toggle:
 
 ```bash
 git clone https://your-domain.example.com/owner/repo.git
@@ -62,6 +79,25 @@ docker exec -u git <container> /app/gogs/gogs admin create-user \
   --email admin@your-domain.example.com --admin \
   --config /data/gogs/conf/app.ini
 ```
+
+### Deploy strategy: Standard vs. Blue-Green/Rolling
+
+Set this project's deploy strategy under Project → Settings → Deploy Strategy.
+
+**Standard** works out of the box with no extra configuration — it always destroys the old
+container before starting the new one, so only one Gogs instance ever touches `/data` at a time.
+
+**Blue-Green and Rolling** briefly run the new instance alongside the old one against the *same*
+`/data` volume — that overlap is the entire point of both strategies (zero-downtime cutover).
+Gogs has no separate job-queue backend to worry about here (it predates that architecture in its
+own fork, Gitea — see the intro above), so there's no LevelDB-style hard lock that crash-loops the
+new instance the way there is for Gitea/Forgejo. The remaining risk is the default database
+itself: SQLite (`GOGS_DB_TYPE=sqlite3`) only allows one writer at a time, so a real write landing
+on both instances in the same instant (rare, given the overlap window is seconds) can hit a
+transient "database is locked" error. Gogs sets a busy-timeout by default, so this generally
+resolves itself with a retry rather than failing outright — but for that residual risk to go away
+entirely, switch to Postgres instead (see "SQLite vs. Postgres" below), which handles concurrent
+writers natively.
 
 ### The REST API needs a token, not your password
 

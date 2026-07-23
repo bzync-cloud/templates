@@ -52,9 +52,23 @@
 # environment. Use .env.example as reference — the platform seeds
 # these as defaults on first deploy.
 #
+# ── This template ─────────────────────────────────────────────────────────────
+#
+# This template deploys like any other — it ships its own Dockerfile, so
+# runtime/framework/version below are ignored (a supplied Dockerfile is
+# always used as-is). worker.js runs an HTTP JSON status endpoint on
+# STATUS_PORT (default 3000) alongside the worker loop — Bzync Cloud's
+# ingress and health checks target the lowest-numbered EXPOSEd port
+# (imageExposedPort() in compute), so this is what a deploy's health check
+# and public dashboard URL see, same reachable/unreachable convention as
+# the redis/garage/seaweedfs templates: `{"status":"ok","worker":"reachable"}`
+# when the loop has run recently, `{"status":"error",...}` (HTTP 503) if
+# it's gone stale.
+#
 # ─────────────────────────────────────────────────────────────────────────────
 
 path = .
+dockerfile = Dockerfile
 runtime = node
 framework = worker
 version = 22

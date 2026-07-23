@@ -45,10 +45,12 @@ ENV PATH=/opt/gitlab/embedded/bin:/opt/gitlab/bin:/assets:/usr/local/sbin:/usr/l
 # deploy.
 VOLUME ["/etc/gitlab", "/var/opt/gitlab", "/var/log/gitlab"]
 
-# SSH and HTTPS are intentionally not exposed — see the FROM scratch comment
-# above. Git-over-SSH still runs inside the container but isn't reachable
-# through Bzync Cloud's HTTP(S)-only ingress; use HTTPS remotes instead once
-# a domain and TLS are attached at the platform's edge.
+# SSH and HTTPS are intentionally not EXPOSEd here — see the FROM scratch
+# comment above. That only affects Traefik's HTTP port autodetection, not
+# SSH reachability: the platform's "Enable Git SSH access" project toggle
+# binds a dedicated host port straight to this container's own SSH daemon
+# regardless of what's EXPOSEd. See the README's "About SSH and HTTPS"
+# section.
 EXPOSE 80
 
 # GitLab's own /-/health endpoint answers before auth and is meant exactly

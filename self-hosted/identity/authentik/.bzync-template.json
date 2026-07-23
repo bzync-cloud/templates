@@ -1,0 +1,15 @@
+{
+  "id": "self-hosted-identity-authentik",
+  "displayName": "authentik",
+  "category": "self-hosted",
+  "subcategory": "identity",
+  "tags": [
+    "identity",
+    "self-hosted",
+    "authentik",
+    "sso",
+    "oidc",
+    "saml"
+  ],
+  "description": "authentik identity provider for Bzync Cloud."
+}

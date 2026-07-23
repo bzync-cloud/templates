@@ -118,6 +118,20 @@
       "path": "background-jobs/worker/ruby"
     },
     {
+      "id": "data-stores-cache-keydb",
+      "displayName": "KeyDB",
+      "category": "data-stores",
+      "subcategory": "cache",
+      "tags": [
+        "cache",
+        "data-stores",
+        "keydb",
+        "redis"
+      ],
+      "description": "KeyDB data store for Bzync Cloud.",
+      "path": "data-stores/cache/keydb"
+    },
+    {
       "id": "data-stores-cache-redis",
       "displayName": "Redis",
       "category": "data-stores",
@@ -129,6 +143,20 @@
       ],
       "description": "Redis data store for Bzync Cloud.",
       "path": "data-stores/cache/redis"
+    },
+    {
+      "id": "data-stores-cache-valkey",
+      "displayName": "Valkey",
+      "category": "data-stores",
+      "subcategory": "cache",
+      "tags": [
+        "cache",
+        "data-stores",
+        "valkey",
+        "redis"
+      ],
+      "description": "Valkey data store for Bzync Cloud.",
+      "path": "data-stores/cache/valkey"
     },
     {
       "id": "data-stores-document-couchbase",
@@ -155,6 +183,48 @@
       ],
       "description": "MongoDB data store for Bzync Cloud.",
       "path": "data-stores/document/mongodb"
+    },
+    {
+      "id": "data-stores-object-storage-garage",
+      "displayName": "Garage",
+      "category": "data-stores",
+      "subcategory": "object-storage",
+      "tags": [
+        "object-storage",
+        "data-stores",
+        "garage",
+        "s3"
+      ],
+      "description": "Garage data store for Bzync Cloud.",
+      "path": "data-stores/object-storage/garage"
+    },
+    {
+      "id": "data-stores-object-storage-minio",
+      "displayName": "MinIO",
+      "category": "data-stores",
+      "subcategory": "object-storage",
+      "tags": [
+        "object-storage",
+        "data-stores",
+        "minio",
+        "s3"
+      ],
+      "description": "MinIO data store for Bzync Cloud.",
+      "path": "data-stores/object-storage/minio"
+    },
+    {
+      "id": "data-stores-object-storage-seaweedfs",
+      "displayName": "SeaweedFS",
+      "category": "data-stores",
+      "subcategory": "object-storage",
+      "tags": [
+        "object-storage",
+        "data-stores",
+        "seaweedfs",
+        "s3"
+      ],
+      "description": "SeaweedFS data store for Bzync Cloud.",
+      "path": "data-stores/object-storage/seaweedfs"
     },
     {
       "id": "data-stores-relational-mariadb",
@@ -194,6 +264,32 @@
       ],
       "description": "PostgreSQL data store for Bzync Cloud.",
       "path": "data-stores/relational/postgres"
+    },
+    {
+      "id": "data-stores-search-meilisearch",
+      "displayName": "Meilisearch",
+      "category": "data-stores",
+      "subcategory": "search",
+      "tags": [
+        "search",
+        "data-stores",
+        "meilisearch"
+      ],
+      "description": "Meilisearch data store for Bzync Cloud.",
+      "path": "data-stores/search/meilisearch"
+    },
+    {
+      "id": "data-stores-search-typesense",
+      "displayName": "Typesense",
+      "category": "data-stores",
+      "subcategory": "search",
+      "tags": [
+        "search",
+        "data-stores",
+        "typesense"
+      ],
+      "description": "Typesense data store for Bzync Cloud.",
+      "path": "data-stores/search/typesense"
     },
     {
       "id": "frontend-angular",
@@ -1622,6 +1718,82 @@
       "path": "self-hosted/ecommerce/magento"
     },
     {
+      "id": "self-hosted-ecommerce-prestashop",
+      "displayName": "PrestaShop",
+      "category": "self-hosted",
+      "subcategory": "ecommerce",
+      "tags": [
+        "ecommerce",
+        "self-hosted",
+        "prestashop"
+      ],
+      "description": "PrestaShop online store for Bzync Cloud.",
+      "path": "self-hosted/ecommerce/prestashop"
+    },
+    {
+      "id": "self-hosted-ecommerce-saleor",
+      "displayName": "Saleor",
+      "category": "self-hosted",
+      "subcategory": "ecommerce",
+      "tags": [
+        "ecommerce",
+        "self-hosted",
+        "saleor",
+        "headless-commerce",
+        "graphql"
+      ],
+      "description": "Saleor headless commerce for Bzync Cloud.",
+      "path": "self-hosted/ecommerce/saleor"
+    },
+    {
+      "id": "self-hosted-identity-authentik",
+      "displayName": "authentik",
+      "category": "self-hosted",
+      "subcategory": "identity",
+      "tags": [
+        "identity",
+        "self-hosted",
+        "authentik",
+        "sso",
+        "oidc",
+        "saml"
+      ],
+      "description": "authentik identity provider for Bzync Cloud.",
+      "path": "self-hosted/identity/authentik"
+    },
+    {
+      "id": "self-hosted-identity-keycloak",
+      "displayName": "Keycloak",
+      "category": "self-hosted",
+      "subcategory": "identity",
+      "tags": [
+        "identity",
+        "self-hosted",
+        "keycloak",
+        "sso",
+        "oidc",
+        "saml"
+      ],
+      "description": "Keycloak identity provider for Bzync Cloud.",
+      "path": "self-hosted/identity/keycloak"
+    },
+    {
+      "id": "self-hosted-identity-zitadel",
+      "displayName": "Zitadel",
+      "category": "self-hosted",
+      "subcategory": "identity",
+      "tags": [
+        "identity",
+        "self-hosted",
+        "zitadel",
+        "sso",
+        "oidc",
+        "saml"
+      ],
+      "description": "Zitadel identity provider for Bzync Cloud.",
+      "path": "self-hosted/identity/zitadel"
+    },
+    {
       "id": "self-hosted-project-management-focalboard",
       "displayName": "Focalboard",
       "category": "self-hosted",
@@ -1724,6 +1896,36 @@
       ],
       "description": "GitLab CE self-hosted application for Bzync Cloud.",
       "path": "self-hosted/version-control/gitlab-ce"
+    },
+    {
+      "id": "self-hosted-wiki-bookstack",
+      "displayName": "BookStack",
+      "category": "self-hosted",
+      "subcategory": "wiki",
+      "tags": [
+        "wiki",
+        "self-hosted",
+        "bookstack",
+        "documentation",
+        "knowledge-base"
+      ],
+      "description": "BookStack wiki for Bzync Cloud.",
+      "path": "self-hosted/wiki/bookstack"
+    },
+    {
+      "id": "self-hosted-wiki-wikijs",
+      "displayName": "Wiki.js",
+      "category": "self-hosted",
+      "subcategory": "wiki",
+      "tags": [
+        "wiki",
+        "self-hosted",
+        "wikijs",
+        "documentation",
+        "knowledge-base"
+      ],
+      "description": "Wiki.js wiki for Bzync Cloud.",
+      "path": "self-hosted/wiki/wikijs"
     }
   ]
 }

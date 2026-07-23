@@ -1,0 +1,14 @@
+{
+  "id": "self-hosted-wiki-wikijs",
+  "displayName": "Wiki.js",
+  "category": "self-hosted",
+  "subcategory": "wiki",
+  "tags": [
+    "wiki",
+    "self-hosted",
+    "wikijs",
+    "documentation",
+    "knowledge-base"
+  ],
+  "description": "Wiki.js wiki for Bzync Cloud."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "data-stores-object-storage-minio",
+  "displayName": "MinIO",
+  "category": "data-stores",
+  "subcategory": "object-storage",
+  "tags": [
+    "object-storage",
+    "data-stores",
+    "minio",
+    "s3"
+  ],
+  "description": "MinIO data store for Bzync Cloud."
+}

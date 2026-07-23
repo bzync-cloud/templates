@@ -1,0 +1,13 @@
+{
+  "id": "data-stores-object-storage-seaweedfs",
+  "displayName": "SeaweedFS",
+  "category": "data-stores",
+  "subcategory": "object-storage",
+  "tags": [
+    "object-storage",
+    "data-stores",
+    "seaweedfs",
+    "s3"
+  ],
+  "description": "SeaweedFS data store for Bzync Cloud."
+}

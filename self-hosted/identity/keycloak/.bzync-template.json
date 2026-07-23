@@ -1,0 +1,15 @@
+{
+  "id": "self-hosted-identity-keycloak",
+  "displayName": "Keycloak",
+  "category": "self-hosted",
+  "subcategory": "identity",
+  "tags": [
+    "identity",
+    "self-hosted",
+    "keycloak",
+    "sso",
+    "oidc",
+    "saml"
+  ],
+  "description": "Keycloak identity provider for Bzync Cloud."
+}

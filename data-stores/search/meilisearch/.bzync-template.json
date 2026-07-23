@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-search-meilisearch",
+  "displayName": "Meilisearch",
+  "category": "data-stores",
+  "subcategory": "search",
+  "tags": [
+    "search",
+    "data-stores",
+    "meilisearch"
+  ],
+  "description": "Meilisearch data store for Bzync Cloud."
+}

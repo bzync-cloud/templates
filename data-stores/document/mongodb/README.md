@@ -9,7 +9,28 @@ replica set (`--replSet`); this Dockerfile omits that since it isn't needed outs
 replication tooling.
 
 **Supported versions:** `7.0` (default), `6.0`
-**Default port:** `27017`
+**Default port:** `27017` — see "Status endpoint" below for why `3000` also matters
+
+## Status endpoint
+
+MongoDB speaks its own binary protocol, not HTTP, so visiting this project's public dashboard URL
+directly in a browser used to just show Traefik's bare "Bad Gateway" — MongoDB was fine, there was
+just nothing that could answer an HTTP request. `bzync-entrypoint.sh` now also serves a small JSON
+status endpoint on `3000` (a live `mongosh` ping against the real `mongod` process, not a static
+response):
+
+```bash
+curl https://your-app.app.bzync.cloud/
+# {"status":"ok","service":"mongodb","mongodb":"reachable"}
+```
+
+`3000` is EXPOSEd alongside `27017` specifically because it's the lower-numbered port — Bzync
+Cloud's ingress and health checks target the lowest-numbered `EXPOSE`d port in the image (see
+`imageExposedPort()` in compute), so this is what makes the platform route the public URL there
+instead of at raw MongoDB. This has no effect on how other apps actually connect to MongoDB —
+they still dial the real protocol port, `27017`, directly over the internal network (see
+"Connecting another app to this database" below); `3000` is purely for the public URL / health
+checks.
 
 ## Deploying
 

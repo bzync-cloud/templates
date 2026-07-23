@@ -68,7 +68,9 @@ Bundler/generator choice (Vite, Astro, Hugo, Jekyll, Eleventy, Docusaurus, MkDoc
 
 `data-stores/cache`: `redis` · `valkey` · `keydb`
 
-`data-stores/search`, `data-stores/object-storage`, `data-stores/message-queue` — no templates yet, see each folder's `README.md`.
+`data-stores/search`: `meilisearch` · `typesense`
+
+`data-stores/object-storage`: `minio` · `garage` · `seaweedfs`
 
 Deployable like any other template — clone, push, and the platform builds the `Dockerfile` as-is.
 Each one matches the exact engine/version Bzync Cloud's production Managed Databases (MDB)
@@ -95,7 +97,7 @@ zero-config SQLite default to a separately deployed `data-stores/relational/post
 
 **`self-hosted/cms`**: `wordpress` · `drupal` · `joomla` · `october-cms` · `statamic` · `strapi` · `directus` · `keystone`
 
-**`self-hosted/ecommerce`**: `magento`
+**`self-hosted/ecommerce`**: `magento` · `prestashop` · `saleor`
 
 **`self-hosted/db-admin`**: `adminer` · `phpmyadmin` · `mongo-express` · `pgadmin`
 
@@ -114,14 +116,18 @@ Self-hosted task/project trackers. Vikunja and Focalboard default to an embedded
 Postgres/MySQL instance — from `data-stores/*` on this tier — for heavier use); Leantime has no
 SQLite fallback and needs a MySQL/MariaDB database from the start. Plane's all-in-one image is the
 heaviest of the four: it needs Postgres, Redis, an AMQP broker, and S3-compatible object storage
-all running before it starts at all — `data-stores/relational` and `data-stores/cache` cover the
-first two on this tier, but the broker and object storage have no Bzync template equivalent yet
-(see `data-stores/message-queue/README.md` and `data-stores/object-storage/README.md`). See each
-directory's `README.md` for the exact tradeoffs and setup steps.
+all running before it starts at all — `data-stores/relational`, `data-stores/cache`, and
+`data-stores/object-storage` (e.g. `minio`) cover three of the four on this tier; the AMQP broker
+still has no Bzync template equivalent. See each directory's `README.md` for the exact tradeoffs
+and setup steps.
+
+**`self-hosted/identity`**: `authentik` · `keycloak` · `zitadel`
+
+**`self-hosted/wiki`**: `bookstack` · `wikijs`
 
 **`self-hosted/automation`**: `n8n` · `openclaw`
 
-**`self-hosted/ai`**, **`self-hosted/monitoring`**, **`self-hosted/identity`**, **`self-hosted/storage`**, **`self-hosted/wiki`**, **`self-hosted/analytics`**, **`self-hosted/mail`**, **`self-hosted/search`** — no templates yet, see each folder's `README.md`.
+**`self-hosted/search`** — no templates yet, see the folder's `README.md`.
 
 ---
 

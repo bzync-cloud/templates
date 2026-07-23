@@ -1,0 +1,13 @@
+{
+  "id": "data-stores-cache-keydb",
+  "displayName": "KeyDB",
+  "category": "data-stores",
+  "subcategory": "cache",
+  "tags": [
+    "cache",
+    "data-stores",
+    "keydb",
+    "redis"
+  ],
+  "description": "KeyDB data store for Bzync Cloud."
+}

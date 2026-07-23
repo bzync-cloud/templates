@@ -1,0 +1,14 @@
+{
+  "id": "self-hosted-ecommerce-saleor",
+  "displayName": "Saleor",
+  "category": "self-hosted",
+  "subcategory": "ecommerce",
+  "tags": [
+    "ecommerce",
+    "self-hosted",
+    "saleor",
+    "headless-commerce",
+    "graphql"
+  ],
+  "description": "Saleor headless commerce for Bzync Cloud."
+}

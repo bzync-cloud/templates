@@ -1,0 +1,14 @@
+{
+  "id": "self-hosted-wiki-bookstack",
+  "displayName": "BookStack",
+  "category": "self-hosted",
+  "subcategory": "wiki",
+  "tags": [
+    "wiki",
+    "self-hosted",
+    "bookstack",
+    "documentation",
+    "knowledge-base"
+  ],
+  "description": "BookStack wiki for Bzync Cloud."
+}

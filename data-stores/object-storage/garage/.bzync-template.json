@@ -1,0 +1,13 @@
+{
+  "id": "data-stores-object-storage-garage",
+  "displayName": "Garage",
+  "category": "data-stores",
+  "subcategory": "object-storage",
+  "tags": [
+    "object-storage",
+    "data-stores",
+    "garage",
+    "s3"
+  ],
+  "description": "Garage data store for Bzync Cloud."
+}

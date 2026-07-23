@@ -5,8 +5,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "openclaw gateway --port 18789",
-    "dev": "openclaw gateway --port 18789 --verbose"
+    "start": "openclaw gateway --port 18789 --allow-unconfigured",
+    "dev": "openclaw gateway --port 18789 --verbose --allow-unconfigured"
   },
   "dependencies": {
     "openclaw": "^2026.6.11"

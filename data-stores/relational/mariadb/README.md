@@ -7,7 +7,28 @@ removed here; see the workspace root `README.md`), so it doubles as a local dev 
 than a stand-in for a real managed instance. Wire-compatible with MySQL clients and drivers.
 
 **Supported versions:** `11` (default), `10.11`
-**Default port:** `3306`
+**Default port:** `3306` — see "Status endpoint" below for why `3000` also matters
+
+## Status endpoint
+
+MariaDB speaks its own binary protocol, not HTTP, so visiting this project's public dashboard URL
+directly in a browser used to just show Traefik's bare "Bad Gateway" — MariaDB was fine, there was
+just nothing that could answer an HTTP request. `bzync-entrypoint.sh` now also serves a small JSON
+status endpoint on `3000` (a live `mariadb-admin ping` against the real `mariadbd` process, not a
+static response):
+
+```bash
+curl https://your-app.app.bzync.cloud/
+# {"status":"ok","service":"mariadb","mariadb":"reachable"}
+```
+
+`3000` is EXPOSEd alongside `3306` specifically because it's the lower-numbered port — Bzync
+Cloud's ingress and health checks target the lowest-numbered `EXPOSE`d port in the image (see
+`imageExposedPort()` in compute), so this is what makes the platform route the public URL there
+instead of at raw MariaDB. This has no effect on how other apps actually connect to MariaDB —
+they still dial the real protocol port, `3306`, directly over the internal network (see
+"Connecting another app to this database" below); `3000` is purely for the public URL / health
+checks.
 
 ## Deploying
 

@@ -1,0 +1,12 @@
+{
+  "id": "data-stores-search-typesense",
+  "displayName": "Typesense",
+  "category": "data-stores",
+  "subcategory": "search",
+  "tags": [
+    "search",
+    "data-stores",
+    "typesense"
+  ],
+  "description": "Typesense data store for Bzync Cloud."
+}

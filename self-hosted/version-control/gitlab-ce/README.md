@@ -61,6 +61,32 @@ the admin UI. If you'd rather set a specific password up front, add
 `gitlab_rails['initial_root_password'] = '...'` to `GITLAB_OMNIBUS_CONFIG` — GitLab's own
 password-strength check still applies, so it needs to be genuinely strong, not just 8+ characters.
 
+### Deploy strategy: Standard vs. Blue-Green/Rolling
+
+Set this project's deploy strategy under Project → Settings → Deploy Strategy.
+
+**Standard** works out of the box with no extra configuration — it always destroys the old
+container before starting the new one, so only one GitLab instance ever touches `/var/opt/gitlab`
+at a time.
+
+**Blue-Green and Rolling** briefly run the new instance alongside the old one against the *same*
+`/etc/gitlab`, `/var/opt/gitlab`, and `/var/log/gitlab` volumes — that overlap is the entire point
+of both strategies (zero-downtime cutover). Out of the box this fails harder than it does for
+Gitea/Forgejo/Gogs: GitLab's bundled Postgres keeps its data directory under `/var/opt/gitlab`,
+and Postgres takes an exclusive `postmaster.pid` lock on that directory at startup. The new
+instance's bundled Postgres can't acquire it while the old one is still running and crash-loops
+through `reconfigure` until the deploy times out and rolls back — you'll see `health check timed
+out` in the build log with no other explanation, likely several minutes in given GitLab's already-
+slow first boot (see "first boot is slow" above).
+
+Unlike Gitea's queue backend, there's no single `GITLAB_OMNIBUS_CONFIG` line that fixes this:
+GitLab's bundled Postgres *and* Redis would both need to move out of the container entirely
+(`postgresql['enable'] = false` / `redis['enable'] = false` plus `gitlab_rails['db_host']` /
+`gitlab_rails['redis_host']` pointed at instances deployed elsewhere) before two omnibus containers
+could safely share a deploy window — a materially bigger reconfiguration than this template ships
+with today. Until that's set up, use **Standard** for this template; Blue-Green/Rolling are not
+safe here as-is.
+
 ### About SSH and HTTPS
 
 The image only exposes port `80`. Bzync Cloud's ingress and health checks target the

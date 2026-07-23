@@ -7,7 +7,28 @@ removed here; see the workspace root `README.md`), so it doubles as a local dev 
 than a stand-in for a real managed instance.
 
 **Supported versions:** `16` (default), `15`, `14`
-**Default port:** `5432`
+**Default port:** `5432` — see "Status endpoint" below for why `3000` also matters
+
+## Status endpoint
+
+Postgres speaks its own binary protocol, not HTTP, so visiting this project's public dashboard
+URL directly in a browser used to just show Traefik's bare "Bad Gateway" — Postgres was fine,
+there was just nothing that could answer an HTTP request. `bzync-entrypoint.sh` now also serves a
+small JSON status endpoint on `3000` (a live `pg_isready` against the real `postgres` process, not
+a static response):
+
+```bash
+curl https://your-app.app.bzync.cloud/
+# {"status":"ok","service":"postgres","postgres":"reachable"}
+```
+
+`3000` is EXPOSEd alongside `5432` specifically because it's the lower-numbered port — Bzync
+Cloud's ingress and health checks target the lowest-numbered `EXPOSE`d port in the image (see
+`imageExposedPort()` in compute), so this is what makes the platform route the public URL there
+instead of at raw Postgres. This has no effect on how other apps actually connect to Postgres —
+they still dial the real protocol port, `5432`, directly over the internal network (see
+"Connecting another app to this database" below); `3000` is purely for the public URL / health
+checks.
 
 ## Deploying
 

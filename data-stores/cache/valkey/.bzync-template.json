@@ -1,0 +1,13 @@
+{
+  "id": "data-stores-cache-valkey",
+  "displayName": "Valkey",
+  "category": "data-stores",
+  "subcategory": "cache",
+  "tags": [
+    "cache",
+    "data-stores",
+    "valkey",
+    "redis"
+  ],
+  "description": "Valkey data store for Bzync Cloud."
+}

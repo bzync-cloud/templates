@@ -44,6 +44,25 @@ extra_env_args() {
     languages/php/laravel|full-stack/laravel-inertia-*)
       printf -- '-e LOG_CHANNEL=stderr -e CACHE_STORE=file -e SESSION_DRIVER=file -e QUEUE_CONNECTION=sync '
       ;;
+    self-hosted/identity/zitadel)
+      # .env.example deliberately ships both blank for real deploys (see
+      # its own comments and README) — the smoke test needs working values:
+      # ZITADEL_MASTERKEY must be exactly 32 chars, and the password must
+      # satisfy Zitadel's complexity policy (upper+lower+digit+symbol) or
+      # first-boot setup crashes outright instead of just booting insecure.
+      printf -- '-e ZITADEL_MASTERKEY=bzyncsmoketestmasterkey32charsXY -e ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORD=Sm0keTest!! '
+      ;;
+    self-hosted/wiki/bookstack)
+      # .env.example deliberately ships this blank for real deploys (the
+      # format can't use the repo-standard "changeme" convention — see
+      # README) — the smoke test needs a real base64:<32 bytes> value.
+      printf -- '-e APP_KEY=base64:MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI= '
+      ;;
+    data-stores/search/meilisearch)
+      # .env.example deliberately ships this blank for real deploys (see
+      # README) — Meilisearch requires 16+ bytes in production mode.
+      printf -- '-e MEILI_MASTER_KEY=bzyncsmoketestmasterkey16bytesplus '
+      ;;
   esac
 }
 
@@ -60,7 +79,7 @@ extra_run_args() {
 
 network_args() {
   case ${1#"$ROOT"/} in
-    self-hosted/cms/joomla|languages/python/odoo|self-hosted/db-admin/mongo-express|self-hosted/project-management/leantime|self-hosted/project-management/plane)
+    self-hosted/cms/joomla|languages/python/odoo|self-hosted/db-admin/mongo-express|self-hosted/project-management/leantime|self-hosted/project-management/plane|self-hosted/identity/authentik|self-hosted/identity/keycloak|self-hosted/identity/zitadel|self-hosted/wiki/bookstack|self-hosted/wiki/wikijs|self-hosted/ecommerce/saleor|self-hosted/ecommerce/prestashop)
       printf -- '--network %s ' "$(network_name "$1")"
       ;;
   esac
@@ -99,6 +118,71 @@ start_aux_services() {
         -e POSTGRES_PASSWORD=odoo \
         -e POSTGRES_DB=postgres \
         postgres:16-alpine >/dev/null
+      ;;
+    self-hosted/identity/authentik|self-hosted/identity/keycloak|self-hosted/identity/zitadel)
+      # None of these three have a SQLite/embedded fallback — .env.example's
+      # DB connection values must match these credentials exactly or the
+      # smoke test's HTTP check never goes healthy. Zitadel specifically
+      # (start-from-init) fails fast and exits on its very first DB dial
+      # instead of retrying like authentik/keycloak do, so unlike every
+      # other aux case here this one polls pg_isready before releasing the
+      # main container — without it, Zitadel loses the race against
+      # Postgres's own first-boot init and crash-exits before ever binding
+      # its HTTP port (confirmed by testing: reproducible "connection
+      # refused" against the aux container with no wait added).
+      docker network create "$net" >/dev/null
+      docker run --rm -d --name "$db" --network "$net" --network-alias db \
+        -e POSTGRES_DB=app \
+        -e POSTGRES_USER=app \
+        -e POSTGRES_PASSWORD=changeme \
+        postgres:16-alpine >/dev/null
+      for _ in $(seq 1 30); do
+        docker exec "$db" pg_isready -U app >/dev/null 2>&1 && break
+        sleep 1
+      done
+      ;;
+    self-hosted/wiki/bookstack)
+      docker network create "$net" >/dev/null
+      docker run --rm -d --name "$db" --network "$net" --network-alias db \
+        -e MARIADB_DATABASE=app \
+        -e MARIADB_USER=app \
+        -e MARIADB_PASSWORD=changeme \
+        -e MARIADB_ROOT_PASSWORD=changeme \
+        mariadb:11 >/dev/null
+      ;;
+    self-hosted/wiki/wikijs)
+      docker network create "$net" >/dev/null
+      docker run --rm -d --name "$db" --network "$net" --network-alias db \
+        -e POSTGRES_DB=app \
+        -e POSTGRES_USER=app \
+        -e POSTGRES_PASSWORD=changeme \
+        postgres:16-alpine >/dev/null
+      ;;
+    self-hosted/ecommerce/saleor)
+      # Saleor needs both Postgres and Redis, and (like Zitadel) has no
+      # retry-on-first-connect-failure behavior for either — wait for
+      # Postgres readiness the same way the identity templates above do.
+      docker network create "$net" >/dev/null
+      docker run --rm -d --name "$db" --network "$net" --network-alias db \
+        -e POSTGRES_DB=app \
+        -e POSTGRES_USER=app \
+        -e POSTGRES_PASSWORD=changeme \
+        postgres:16-alpine >/dev/null
+      docker run --rm -d --name "$db-redis" --network "$net" --network-alias redis \
+        redis:7-alpine >/dev/null
+      for _ in $(seq 1 30); do
+        docker exec "$db" pg_isready -U app >/dev/null 2>&1 && break
+        sleep 1
+      done
+      ;;
+    self-hosted/ecommerce/prestashop)
+      docker network create "$net" >/dev/null
+      docker run --rm -d --name "$db" --network "$net" --network-alias db \
+        -e MYSQL_DATABASE=app \
+        -e MYSQL_USER=app \
+        -e MYSQL_PASSWORD=changeme \
+        -e MYSQL_RANDOM_ROOT_PASSWORD=yes \
+        mysql:8.0 >/dev/null
       ;;
     self-hosted/db-admin/mongo-express)
       # No DB_HOST in .env.example, so the image's own baked-in default
@@ -159,6 +243,16 @@ smoke_paths() {
       # of the auth middleware upstream, so it alone stays reachable here.
       printf '/status'
       ;;
+    data-stores/search/typesense)
+      # Pure REST API, no root route registered — bare / is a 404 even
+      # when the server is fully healthy. /health is the real check.
+      printf '/health'
+      ;;
+    self-hosted/ecommerce/saleor)
+      # Headless GraphQL API, no root route registered — bare / is a 404
+      # even when the server is fully healthy.
+      printf '/graphql/'
+      ;;
     *)
       printf '/'
       ;;
@@ -176,6 +270,37 @@ smoke_deadline() {
     self-hosted/project-management/plane)
       # Waits on four aux services (Postgres, Redis, RabbitMQ, MinIO) plus
       # its own DB migrations and ~7 supervised processes on first boot.
+      printf '180'
+      ;;
+    self-hosted/identity/authentik)
+      # Runs a long chain of first-boot DB migrations against the aux
+      # Postgres before either the server or worker role is ready.
+      printf '180'
+      ;;
+    self-hosted/identity/keycloak)
+      # Liquibase schema migration on first boot observed taking up to 6
+      # minutes even on capable hardware — see README.md.
+      printf '420'
+      ;;
+    self-hosted/identity/zitadel)
+      # First-boot migration count varies run to run (observed 15-30s+
+      # under load) — give it more headroom than the 45s default.
+      printf '120'
+      ;;
+    self-hosted/wiki/bookstack)
+      # A long chain of Laravel migrations runs on first boot against the
+      # aux MariaDB before the app answers — observed 60s+ under load.
+      printf '150'
+      ;;
+    self-hosted/ecommerce/saleor)
+      # Years of Saleor schema history migrate on first boot — observed
+      # 2+ minutes against the aux Postgres under load.
+      printf '240'
+      ;;
+    self-hosted/ecommerce/prestashop)
+      # MySQL's own first-boot init (temp server + real server, see
+      # data-stores/relational/mysql) plus PrestaShop's ~300-table
+      # auto-install on top of it.
       printf '180'
       ;;
     *)

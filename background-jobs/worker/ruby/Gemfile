@@ -3,3 +3,6 @@ source "https://rubygems.org"
 ruby "~> 3.4"
 
 gem "dotenv"
+# Removed from Ruby's default gems in 3.0+ — needed explicitly for
+# worker.rb's status HTTP server (see BZYNC_CLOUD).
+gem "webrick"

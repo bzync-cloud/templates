@@ -1,0 +1,15 @@
+{
+  "id": "self-hosted-identity-zitadel",
+  "displayName": "Zitadel",
+  "category": "self-hosted",
+  "subcategory": "identity",
+  "tags": [
+    "identity",
+    "self-hosted",
+    "zitadel",
+    "sso",
+    "oidc",
+    "saml"
+  ],
+  "description": "Zitadel identity provider for Bzync Cloud."
+}

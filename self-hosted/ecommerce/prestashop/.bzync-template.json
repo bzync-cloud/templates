@@ -1,0 +1,12 @@
+{
+  "id": "self-hosted-ecommerce-prestashop",
+  "displayName": "PrestaShop",
+  "category": "self-hosted",
+  "subcategory": "ecommerce",
+  "tags": [
+    "ecommerce",
+    "self-hosted",
+    "prestashop"
+  ],
+  "description": "PrestaShop online store for Bzync Cloud."
+}
