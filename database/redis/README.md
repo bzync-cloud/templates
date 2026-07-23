@@ -7,7 +7,27 @@ removed here; see the workspace root `README.md`), so it doubles as a local dev 
 than a stand-in for a real managed instance.
 
 **Supported versions:** `7` (default, `7.2-alpine`), `6` (`6.2-alpine`)
-**Default port:** `6379`
+**Default port:** `6379` (Redis protocol) — see "Status endpoint" below for why `3000` also matters
+
+## Status endpoint
+
+Redis speaks its own binary protocol, not HTTP, so visiting this project's public dashboard URL
+directly in a browser used to just show Traefik's bare "Bad Gateway" — Redis was fine, there was
+just nothing that could answer an HTTP request. `bzync-entrypoint.sh` now also serves a small JSON
+status endpoint on `3000` (a live `redis-cli ping` against the real `redis-server` process, not a
+static response):
+
+```bash
+curl https://your-app.app.bzync.cloud/
+# {"status":"ok","service":"redis","redis":"reachable"}
+```
+
+`3000` is EXPOSEd alongside `6379` specifically because it's the lower-numbered port — Bzync
+Cloud's ingress and health checks target the lowest-numbered `EXPOSE`d port in the image (see
+`imageExposedPort()` in compute), so this is what makes the platform route the public URL there
+instead of at raw Redis. This has no effect on how other apps actually connect to Redis — they
+still dial the real protocol port, `6379`, directly over the internal network (see "Connecting
+another app to this database" below); `3000` is purely for the public URL / health checks.
 
 ## Deploying
 
