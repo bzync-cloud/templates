@@ -69,3 +69,8 @@ dockerfile = Dockerfile
 volume = /etc/gitlab
 volume = /var/opt/gitlab
 volume = /var/log/gitlab
+
+# Single-writer local state (bundled Postgres+Redis) — do not scale replicas
+# or use rolling/blue-green; see README.md's "Deploy strategy" section.
+replicas = 1
+deploy_strategy = standard

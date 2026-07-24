@@ -71,3 +71,10 @@
 path = .
 dockerfile = Dockerfile
 volume = /data
+
+# Single-writer local state — do not scale replicas or use rolling/blue-green.
+# Unlike a database, Valkey takes no exclusive lock on its AOF directory, so
+# a second overlapping instance won't crash-loop — it will silently corrupt
+# the appendonlydir with torn concurrent writes instead.
+replicas = 1
+deploy_strategy = standard

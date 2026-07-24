@@ -68,3 +68,9 @@
 path = .
 dockerfile = Dockerfile
 volume = /var/lib/pgadmin
+
+# This volume holds pgAdmin's own internal SQLite state (logins, saved
+# connections) — low-stakes, but still single-writer. Do not scale replicas
+# or use rolling/blue-green.
+replicas = 1
+deploy_strategy = standard

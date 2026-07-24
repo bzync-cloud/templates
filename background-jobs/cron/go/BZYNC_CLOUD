@@ -72,3 +72,10 @@ dockerfile = Dockerfile
 runtime = go
 framework = cron
 version = 1.24
+
+# job.go has no leader election or distributed lock — every replica fires
+# the schedule independently. Do not scale replicas (duplicate job runs) or
+# use rolling/blue-green (a brief overlap window double-fires too) unless
+# you add your own dedup/locking to job.go first.
+replicas = 1
+deploy_strategy = standard

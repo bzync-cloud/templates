@@ -30,6 +30,12 @@ func main() {
 	}
 }
 
+// run is a placeholder heartbeat, safe to scale to any replica count as-is
+// since it does nothing but log. If you replace it with real work (polling
+// a queue or a database table), make sure each item is claimed by exactly
+// one replica before processing it (e.g. `SELECT ... FOR UPDATE SKIP
+// LOCKED`, or your broker's own ack/visibility-timeout semantics) —
+// without that, N replicas will each pick up and process the same item.
 func run() {
 	fmt.Printf("Go worker heartbeat %s\n", time.Now().UTC().Format(time.RFC3339))
 	lastRunUnixNano.Store(time.Now().UnixNano())

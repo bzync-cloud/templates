@@ -72,3 +72,10 @@ dockerfile = Dockerfile
 runtime = python
 framework = cron
 version = 3.13
+
+# job.py has no leader election or distributed lock — every replica fires
+# the schedule independently. Do not scale replicas (duplicate job runs) or
+# use rolling/blue-green (a brief overlap window double-fires too) unless
+# you add your own dedup/locking to job.py first.
+replicas = 1
+deploy_strategy = standard

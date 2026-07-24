@@ -71,3 +71,9 @@
 path = .
 dockerfile = Dockerfile
 volume = /opt/focalboard/data
+
+# Single-writer local state by default (bundled SQLite) — do not scale
+# replicas or use rolling/blue-green unless you've linked an external
+# Postgres database instead; see README.md.
+replicas = 1
+deploy_strategy = standard

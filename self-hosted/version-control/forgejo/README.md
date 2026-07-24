@@ -78,6 +78,39 @@ docker exec -u git <container> gitea admin user create \
   --config /data/gitea/conf/app.ini
 ```
 
+### Deploy strategy: Standard vs. Blue-Green/Rolling
+
+Set this project's deploy strategy under Project → Settings → Deploy Strategy.
+
+**Standard** works out of the box with no extra configuration — it always destroys the old
+container before starting the new one, so only one Forgejo instance ever touches `/data` at a
+time.
+
+**Blue-Green and Rolling** briefly run the new instance alongside the old one against the *same*
+`/data` volume — that overlap is the entire point of both strategies (zero-downtime cutover). Out
+of the box this fails, the same way it does for Gitea (Forgejo is a Gitea fork sharing this exact
+architecture): the default queue backend (LevelDB, under `/data/gitea/queues`) takes an exclusive
+process-level file lock, so the new instance can't acquire it while the old one is still running,
+and crash-loops on a fatal `unable to lock level db` error until the deploy times out and rolls
+back — you'll see `health check timed out: 0/1 containers healthy after 60s` in the build log with
+no other explanation.
+
+To use Blue-Green or Rolling, deploy `data-stores/cache/redis` from this catalog as its own app,
+then set (see `.env.example`):
+
+```
+GITEA__queue__TYPE=redis
+GITEA__queue__CONN_STR=redis://:<REDIS_PASSWORD>@<REDIS_HOST>:6379/0
+```
+
+This moves the queue off the local, single-writer LevelDB file onto Redis, which both instances
+can connect to concurrently. Note this doesn't make concurrent instances fully equivalent to a real
+HA setup — SQLite still only allows one writer at a time, so a real write landing on both instances
+in the same instant (rare, given the overlap window is seconds) can hit a transient `database is
+locked` retry; Forgejo sets a busy-timeout by default so this resolves itself rather than failing
+outright. For that residual risk to go away entirely, switch `GITEA__database__DB_TYPE` to
+`postgres` too (see "SQLite vs. Postgres" below).
+
 ## Run locally
 
 ```bash

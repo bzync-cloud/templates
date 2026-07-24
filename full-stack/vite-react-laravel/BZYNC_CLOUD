@@ -56,8 +56,8 @@
 
 [frontend]
 path = frontend
-runtime = vite
-framework = react
+runtime = node
+framework = vite-react
 version = 22
 [backend]
 path = backend

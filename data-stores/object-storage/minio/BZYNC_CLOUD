@@ -69,3 +69,10 @@
 path = .
 dockerfile = Dockerfile
 volume = /data
+
+# Single-writer local state — do not scale replicas or use rolling/blue-green.
+# Standalone MinIO takes no distributed lock across processes; a second
+# overlapping instance can corrupt the .minio.sys format/metadata, sometimes
+# surfacing later as a "corrupted backend format" refusal to start.
+replicas = 1
+deploy_strategy = standard

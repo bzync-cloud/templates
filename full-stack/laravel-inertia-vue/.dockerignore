@@ -9,5 +9,4 @@ node_modules/
 storage/logs/
 public/build/
 public/hot
-bootstrap/cache/
 BZYNC_CLOUD

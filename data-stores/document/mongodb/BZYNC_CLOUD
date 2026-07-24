@@ -70,3 +70,9 @@ path = .
 dockerfile = Dockerfile
 volume = /data/db
 volume = /data/configdb
+
+# Single-writer local state, not run as a replica set — do not scale replicas
+# or use rolling/blue-green (a second instance can't acquire mongod.lock on
+# this data directory and will crash-loop).
+replicas = 1
+deploy_strategy = standard

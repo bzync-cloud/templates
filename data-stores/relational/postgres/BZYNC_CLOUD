@@ -69,3 +69,9 @@
 path = .
 dockerfile = Dockerfile
 volume = /var/lib/postgresql/data
+
+# Single-writer local state — do not scale replicas or use rolling/blue-green
+# (a second instance can't acquire Postgres's exclusive postmaster.pid lock
+# on this volume and will crash-loop).
+replicas = 1
+deploy_strategy = standard

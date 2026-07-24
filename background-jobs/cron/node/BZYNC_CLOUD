@@ -72,3 +72,10 @@ dockerfile = Dockerfile
 runtime = node
 framework = cron
 version = 22
+
+# job.js has no leader election or distributed lock — every replica fires
+# the schedule independently. Do not scale replicas (duplicate job runs) or
+# use rolling/blue-green (a brief overlap window double-fires too) unless
+# you add your own dedup/locking to job.js first.
+replicas = 1
+deploy_strategy = standard

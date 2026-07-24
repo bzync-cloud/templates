@@ -71,3 +71,9 @@
 path = .
 dockerfile = Dockerfile
 volume = /meili_data
+
+# Single-writer local state — do not scale replicas or use rolling/blue-green
+# (a second instance can't acquire this volume's exclusive LMDB env lock and
+# will crash-loop).
+replicas = 1
+deploy_strategy = standard

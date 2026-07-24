@@ -69,3 +69,9 @@
 path = .
 dockerfile = Dockerfile
 volume = /var/lib/mysql
+
+# Single-writer local state — do not scale replicas or use rolling/blue-green
+# (a second instance can't acquire InnoDB's exclusive lock on this data
+# directory and will crash-loop).
+replicas = 1
+deploy_strategy = standard

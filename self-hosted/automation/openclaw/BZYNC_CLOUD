@@ -61,3 +61,9 @@ version = 22
 dockerfile = Dockerfile
 volume = /home/node/.openclaw
 volume = /home/node/.config/openclaw
+
+# Single-writer local state — this workspace/config data has no external-
+# database option (unlike most other templates here), so do not scale
+# replicas or use rolling/blue-green under any configuration; see README.md.
+replicas = 1
+deploy_strategy = standard

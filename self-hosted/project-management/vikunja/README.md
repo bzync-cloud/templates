@@ -31,6 +31,22 @@ copies them in with the right ownership, which is also why both are declared as 
 fresh anonymous volume at either path inherits that ownership instead of defaulting to root and
 failing every write.
 
+### Deploy strategy: Standard vs. Blue-Green/Rolling
+
+Set this project's deploy strategy under Project → Settings → Deploy Strategy.
+
+**Standard** works out of the box with no extra configuration — it always destroys the old
+container before starting the new one, so only one Vikunja instance ever touches `/db` at a time.
+
+**Blue-Green and Rolling** briefly run the new instance alongside the old one against the *same*
+`/db` volume — that overlap is the entire point of both strategies (zero-downtime cutover). The
+risk here is the default database itself: SQLite only allows one writer at a time, so a real write
+landing on both instances in the same instant (rare, given the overlap window is seconds) can hit a
+transient "database is locked" error. Whether that resolves itself with a retry or surfaces as a
+failed request depends on Vikunja's SQLite driver settings, which this template doesn't tune — for
+that risk to go away entirely, switch to Postgres or MySQL instead (see "SQLite vs. Postgres/MySQL"
+below), which handle concurrent writers natively. Until then, stick to Standard.
+
 ## Run locally
 
 ```bash

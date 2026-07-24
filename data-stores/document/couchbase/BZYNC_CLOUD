@@ -69,3 +69,9 @@
 path = .
 dockerfile = Dockerfile
 volume = /opt/couchbase/var
+
+# Single-writer local state — do not scale replicas or use rolling/blue-green
+# (a second instance sharing this data directory corrupts ns_server/mnesia
+# state rather than cleanly failing).
+replicas = 1
+deploy_strategy = standard

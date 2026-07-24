@@ -69,3 +69,10 @@
 path = .
 dockerfile = Dockerfile
 volume = /data
+
+# Single-writer local state, pinned single-node (replication_factor=1,
+# --single-node in garage.toml) — do not scale replicas or use
+# rolling/blue-green (a second instance can't acquire this volume's
+# exclusive metadata-store lock and will crash-loop).
+replicas = 1
+deploy_strategy = standard

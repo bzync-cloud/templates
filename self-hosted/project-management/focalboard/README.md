@@ -36,6 +36,22 @@ entrypoint) patches that file in place from `FOCALBOARD_SERVERROOT` and a linked
 `DB_*` vars before handing off to `focalboard-server`, so the usual dashboard env var workflow
 still applies.
 
+### Deploy strategy: Standard vs. Blue-Green/Rolling
+
+Set this project's deploy strategy under Project → Settings → Deploy Strategy.
+
+**Standard** works out of the box with no extra configuration — it always destroys the old
+container before starting the new one, so only one Focalboard instance ever touches
+`/opt/focalboard/data` at a time.
+
+**Blue-Green and Rolling** briefly run the new instance alongside the old one against the *same*
+`/opt/focalboard/data` volume — that overlap is the entire point of both strategies (zero-downtime
+cutover). The risk here is the default database itself: SQLite only allows one writer at a time,
+so a real write landing on both instances in the same instant (rare, given the overlap window is
+seconds) can produce a "database is locked" error. For that risk to go away entirely, switch to
+Postgres instead (see "SQLite vs. Postgres" below), which handles concurrent writers natively.
+Until then, stick to Standard.
+
 ## Run locally
 
 ```bash
